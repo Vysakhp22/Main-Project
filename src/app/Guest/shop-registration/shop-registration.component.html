@@ -3,32 +3,95 @@
 <body>
   <div class="row">
     <div class="col-md-6"
-      style="border:.1px solid rgb(228, 113, 184); border-radius: 10px;top: 10px; margin-top: 10%; margin-left: 15%;">
+      style="border:.1px solid rgb(228, 113, 184); border-radius: 10px;top: 10px; margin-top: 3%; margin-left: 25%;">
       <div style="margin-top: 3%; margin-left: 0%;">
         <div class="d-flex p-3 justify-content-center">
-          <h4>Place Register</h4>
+          <h4>Shop Register</h4>
         </div>
-        <div>
+        <div style="margin-left: 20%;">
           <form>
-            <div class="form-group">
-              <label for="exampleFormControlSelect1">District</label>
-              <select class="form-control" id="exampleFormControlSelect1">
-                <option selected>--select--</option>
-                <option value="saab">Saab</option>
-                <option value="opel">Opel</option>
-                <option value="audi">Audi</option>
-              </select>
+            <div class="row">
+              <label>Name:</label>
+              <div class="col-md-10">
+                <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+              </div>
             </div>
-            <div class="form-group">
+            <div class="row">
+              <label>Contact:</label>
+              <div class="col-md-10">
+                <input type="number" class="form-control" placeholder="contact" aria-label="contact">
+              </div>
+            </div>
+            <div class="row">
+              <label>E-mail:</label>
+              <div class="col-md-10">
+                <input type="email" class="form-control" placeholder="E-mail id">
+              </div>
+            </div>
+            <div class="row">
+              <label>Address:</label>
+              <div class="col-md-10">
+                <textarea class="form-control" placeholder="Enter your shop address" id="floatingTextarea"></textarea>
+              </div>
+            </div>
+            <div class="row">
+              <label>District:</label>
+              <div class="col-md-10">
+                <select class="form-control">
+                  <option selected>--select--</option>
+                  <option value="saab">Saab</option>
+                  <option value="opel">Opel</option>
+                  <option value="audi">Audi</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
               <label>Place:</label>
-              <input type="text" class="form-control" placeholder="Place">
+              <div class="col-md-10">
+                <select class="form-control">
+                  <option selected>--select--</option>
+                  <option value="saab">Saab</option>
+                  <option value="opel">Opel</option>
+                  <option value="audi">Audi</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <label>Logo:</label>
+              <div class="col-md-10 ">
+                <input type="file" class="form-control">
+              </div>
+            </div>
+            <div class="row">
+              <label>Proof:</label>
+              <div class="col-md-10 ">
+                <input type="file" class="form-control">
+              </div>
+            </div>
+            <div class="row">
+              <label>Owner name:</label>
+              <div class="col-md-10">
+                <input type="text" class="form-control" placeholder="Owner's name">
+              </div>
+            </div>
+            <div class="row">
+              <label>Password:</label>
+              <div class="col-md-10">
+                <input type="password" class="form-control" placeholder="Password">
+              </div>
+            </div>
+            <div class="row">
+              <label>Confirm Password:</label>
+              <div class="col-md-10">
+                <input type="password" class="form-control" placeholder="re-enter your password">
+              </div>
             </div>
             <div class="form-group">
               <div class="form-check">
 
               </div>
             </div>
-            &nbsp;&nbsp;&nbsp;<button type="submit" class="btn btn-primary">Submit</button>&nbsp;
+            &nbsp;<button type="submit" class="btn btn-primary">Submit</button>&nbsp;
             <button type="reset" class="btn btn-danger">Cancel</button>
           </form>
           <br>

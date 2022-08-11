@@ -12,6 +12,7 @@ import { CompanyNavbarComponent } from './Company/company-navbar/company-navbar.
 import { GuesthomeComponent } from './Guest/guesthome/guesthome.component';
 import { GuestloginComponent } from './Guest/guestlogin/guestlogin.component';
 import { GuestnavComponent } from './Guest/guestnav/guestnav.component';
+import { ShopRegistrationComponent } from './Guest/shop-registration/shop-registration.component';
 import { PrisonerNavbarComponent } from './Prisoner/prisoner-navbar/prisoner-navbar.component';
 import { ShopNavbarComponent } from './Shop/shop-navbar/shop-navbar.component';
 import { UserNavbarComponent } from './User/user-navbar/user-navbar.component';
@@ -20,7 +21,8 @@ const routes: Routes = [
   {path:'',component:GuestnavComponent,
 children:[
   {path:'',component:GuesthomeComponent},
-  {path:'guestLogin',component:GuestloginComponent}
+  {path:'guestLogin',component:GuestloginComponent},
+  {path:'shopregister',component:ShopRegistrationComponent}
 ]},
 {path:'admin',component:AdminnavbarComponent,
 children:[{path:'district',component:DistrictComponent},
