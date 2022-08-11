@@ -9,6 +9,10 @@ import { GuestloginComponent } from './Guest/guestlogin/guestlogin.component';
 import { AdminnavbarComponent } from './Admin/adminnavbar/adminnavbar.component';
 import { PrisonerNavbarComponent } from './Prisoner/prisoner-navbar/prisoner-navbar.component';
 import { CompanyNavbarComponent } from './Company/company-navbar/company-navbar.component';
+import { ShopNavbarComponent } from './Shop/shop-navbar/shop-navbar.component';
+import { UserNavbarComponent } from './User/user-navbar/user-navbar.component';
+import { DistrictComponent } from './Admin/district/district.component';
+import { ViewDistrictComponent } from './Admin/view-district/view-district.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { CompanyNavbarComponent } from './Company/company-navbar/company-navbar.
     GuestloginComponent,
     AdminnavbarComponent,
     PrisonerNavbarComponent,
-    CompanyNavbarComponent
+    CompanyNavbarComponent,
+    ShopNavbarComponent,
+    UserNavbarComponent,
+    DistrictComponent,
+    ViewDistrictComponent
   ],
   imports: [
     BrowserModule,
