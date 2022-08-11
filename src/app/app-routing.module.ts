@@ -3,7 +3,11 @@ import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminnavbarComponent } from './Admin/adminnavbar/adminnavbar.component';
 import { DistrictComponent } from './Admin/district/district.component';
+import { PlaceComponent } from './Admin/place/place.component';
+import { ProductCategoryComponent } from './Admin/product-category/product-category.component';
 import { ViewDistrictComponent } from './Admin/view-district/view-district.component';
+import { ViewPlaceComponent } from './Admin/view-place/view-place.component';
+import { ViewProductCategoryComponent } from './Admin/view-product-category/view-product-category.component';
 import { CompanyNavbarComponent } from './Company/company-navbar/company-navbar.component';
 import { GuesthomeComponent } from './Guest/guesthome/guesthome.component';
 import { GuestloginComponent } from './Guest/guestlogin/guestlogin.component';
@@ -20,7 +24,11 @@ children:[
 ]},
 {path:'admin',component:AdminnavbarComponent,
 children:[{path:'district',component:DistrictComponent},
-          {path:'viewdistrict',component:ViewDistrictComponent}]},
+          {path:'viewdistrict',component:ViewDistrictComponent},
+          {path:'place',component:PlaceComponent},
+          {path:'viewplace',component:ViewPlaceComponent},
+          {path:'category',component:ProductCategoryComponent},
+          {path:'viewCategory',component:ViewProductCategoryComponent}]},
 {path:'prisoner',component:PrisonerNavbarComponent},
 {path:'company',component:CompanyNavbarComponent},
 {path:'shop',component:ShopNavbarComponent},

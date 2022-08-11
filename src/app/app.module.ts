@@ -13,6 +13,11 @@ import { ShopNavbarComponent } from './Shop/shop-navbar/shop-navbar.component';
 import { UserNavbarComponent } from './User/user-navbar/user-navbar.component';
 import { DistrictComponent } from './Admin/district/district.component';
 import { ViewDistrictComponent } from './Admin/view-district/view-district.component';
+import { PlaceComponent } from './Admin/place/place.component';
+import { ViewPlaceComponent } from './Admin/view-place/view-place.component';
+import { ProductCategoryComponent } from './Admin/product-category/product-category.component';
+import { ViewProductCategoryComponent } from './Admin/view-product-category/view-product-category.component';
+import { ShopRegistrationComponent } from './Guest/shop-registration/shop-registration.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +31,12 @@ import { ViewDistrictComponent } from './Admin/view-district/view-district.compo
     ShopNavbarComponent,
     UserNavbarComponent,
     DistrictComponent,
-    ViewDistrictComponent
+    ViewDistrictComponent,
+    PlaceComponent,
+    ViewPlaceComponent,
+    ProductCategoryComponent,
+    ViewProductCategoryComponent,
+    ShopRegistrationComponent
   ],
   imports: [
     BrowserModule,
