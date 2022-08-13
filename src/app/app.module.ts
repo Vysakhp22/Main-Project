@@ -35,6 +35,8 @@ import { ShopMyProfileComponent } from './Shop/shop-my-profile/shop-my-profile.c
 import { ShopChangePasswordComponent } from './Shop/shop-change-password/shop-change-password.component';
 import { ShopEditProfileComponent } from './Shop/shop-edit-profile/shop-edit-profile.component';
 import { CompanyMyProfileComponent } from './Company/company-my-profile/company-my-profile.component';
+import { CompanyChangePasswordComponent } from './Company/company-change-password/company-change-password.component';
+import { CompanyEditProfileComponent } from './Company/company-edit-profile/company-edit-profile.component';
 
 
 @NgModule({
@@ -71,7 +73,9 @@ import { CompanyMyProfileComponent } from './Company/company-my-profile/company-
     ShopMyProfileComponent,
     ShopChangePasswordComponent,
     ShopEditProfileComponent,
-    CompanyMyProfileComponent
+    CompanyMyProfileComponent,
+    CompanyChangePasswordComponent,
+    CompanyEditProfileComponent
   ],
   imports: [
     BrowserModule,

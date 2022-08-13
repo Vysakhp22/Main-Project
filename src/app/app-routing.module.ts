@@ -16,6 +16,9 @@ import { ViewProductCategoryComponent } from './Admin/view-product-category/view
 import { ViewProductComponent } from './Admin/view-product/view-product.component';
 import { ViewRejectedCompanyComponent } from './Admin/view-rejected-company/view-rejected-company.component';
 import { ViewRejectedShopComponent } from './Admin/view-rejected-shop/view-rejected-shop.component';
+import { CompanyChangePasswordComponent } from './Company/company-change-password/company-change-password.component';
+import { CompanyEditProfileComponent } from './Company/company-edit-profile/company-edit-profile.component';
+import { CompanyMyProfileComponent } from './Company/company-my-profile/company-my-profile.component';
 import { CompanyNavbarComponent } from './Company/company-navbar/company-navbar.component';
 import { CompanyRegistrationComponent } from './Guest/company-registration/company-registration.component';
 import { GuesthomeComponent } from './Guest/guesthome/guesthome.component';
@@ -58,7 +61,10 @@ children:[{path:'district',component:DistrictComponent},
           {path:'product',component:ProductComponent},
           {path:'viewproduct',component:ViewProductComponent}]},
 {path:'prisoner',component:PrisonerNavbarComponent},
-{path:'company',component:CompanyNavbarComponent},
+{path:'company',component:CompanyNavbarComponent,
+children:[{path:'companymyprofile',component:CompanyMyProfileComponent},
+          {path:'companychangepassword',component:CompanyChangePasswordComponent},
+          {path:'companyeditprofile',component:CompanyEditProfileComponent}]},
 {path:'shop',component:ShopNavbarComponent,
 children:[{path:'shopmyprofile',component:ShopMyProfileComponent},
           {path:'shopchangepassword',component:ShopChangePasswordComponent},
