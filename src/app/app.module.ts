@@ -18,6 +18,8 @@ import { ViewPlaceComponent } from './Admin/view-place/view-place.component';
 import { ProductCategoryComponent } from './Admin/product-category/product-category.component';
 import { ViewProductCategoryComponent } from './Admin/view-product-category/view-product-category.component';
 import { ShopRegistrationComponent } from './Guest/shop-registration/shop-registration.component';
+import { CompanyRegistrationComponent } from './Guest/company-registration/company-registration.component';
+
 
 @NgModule({
   declarations: [
@@ -36,11 +38,13 @@ import { ShopRegistrationComponent } from './Guest/shop-registration/shop-regist
     ViewPlaceComponent,
     ProductCategoryComponent,
     ViewProductCategoryComponent,
-    ShopRegistrationComponent
+    ShopRegistrationComponent,
+    CompanyRegistrationComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

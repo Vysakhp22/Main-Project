@@ -9,6 +9,7 @@ import { ViewDistrictComponent } from './Admin/view-district/view-district.compo
 import { ViewPlaceComponent } from './Admin/view-place/view-place.component';
 import { ViewProductCategoryComponent } from './Admin/view-product-category/view-product-category.component';
 import { CompanyNavbarComponent } from './Company/company-navbar/company-navbar.component';
+import { CompanyRegistrationComponent } from './Guest/company-registration/company-registration.component';
 import { GuesthomeComponent } from './Guest/guesthome/guesthome.component';
 import { GuestloginComponent } from './Guest/guestlogin/guestlogin.component';
 import { GuestnavComponent } from './Guest/guestnav/guestnav.component';
@@ -22,7 +23,8 @@ const routes: Routes = [
 children:[
   {path:'',component:GuesthomeComponent},
   {path:'guestLogin',component:GuestloginComponent},
-  {path:'shopregister',component:ShopRegistrationComponent}
+  {path:'shopregister',component:ShopRegistrationComponent},
+  {path:'companyregister',component:CompanyRegistrationComponent}
 ]},
 {path:'admin',component:AdminnavbarComponent,
 children:[{path:'district',component:DistrictComponent},
