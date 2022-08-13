@@ -31,6 +31,10 @@ import { ViewProductComponent } from './Admin/view-product/view-product.componen
 import { UserChangePasswordComponent } from './User/user-change-password/user-change-password.component';
 import { UserMyProfileComponent } from './User/user-my-profile/user-my-profile.component';
 import { UserEditProfileComponent } from './User/user-edit-profile/user-edit-profile.component';
+import { ShopMyProfileComponent } from './Shop/shop-my-profile/shop-my-profile.component';
+import { ShopChangePasswordComponent } from './Shop/shop-change-password/shop-change-password.component';
+import { ShopEditProfileComponent } from './Shop/shop-edit-profile/shop-edit-profile.component';
+import { CompanyMyProfileComponent } from './Company/company-my-profile/company-my-profile.component';
 
 
 @NgModule({
@@ -63,7 +67,11 @@ import { UserEditProfileComponent } from './User/user-edit-profile/user-edit-pro
     ViewProductComponent,
     UserChangePasswordComponent,
     UserMyProfileComponent,
-    UserEditProfileComponent
+    UserEditProfileComponent,
+    ShopMyProfileComponent,
+    ShopChangePasswordComponent,
+    ShopEditProfileComponent,
+    CompanyMyProfileComponent
   ],
   imports: [
     BrowserModule,

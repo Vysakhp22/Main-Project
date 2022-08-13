@@ -24,6 +24,9 @@ import { GuestnavComponent } from './Guest/guestnav/guestnav.component';
 import { NewUserComponent } from './Guest/new-user/new-user.component';
 import { ShopRegistrationComponent } from './Guest/shop-registration/shop-registration.component';
 import { PrisonerNavbarComponent } from './Prisoner/prisoner-navbar/prisoner-navbar.component';
+import { ShopChangePasswordComponent } from './Shop/shop-change-password/shop-change-password.component';
+import { ShopEditProfileComponent } from './Shop/shop-edit-profile/shop-edit-profile.component';
+import { ShopMyProfileComponent } from './Shop/shop-my-profile/shop-my-profile.component';
 import { ShopNavbarComponent } from './Shop/shop-navbar/shop-navbar.component';
 import { UserChangePasswordComponent } from './User/user-change-password/user-change-password.component';
 import { UserEditProfileComponent } from './User/user-edit-profile/user-edit-profile.component';
@@ -56,7 +59,10 @@ children:[{path:'district',component:DistrictComponent},
           {path:'viewproduct',component:ViewProductComponent}]},
 {path:'prisoner',component:PrisonerNavbarComponent},
 {path:'company',component:CompanyNavbarComponent},
-{path:'shop',component:ShopNavbarComponent},
+{path:'shop',component:ShopNavbarComponent,
+children:[{path:'shopmyprofile',component:ShopMyProfileComponent},
+          {path:'shopchangepassword',component:ShopChangePasswordComponent},
+          {path:'shopeditprofile',component:ShopEditProfileComponent}]},
 {path:'user',component:UserNavbarComponent,
 children:[{path:'changepassword',component:UserChangePasswordComponent},
           {path:'usermyprofile',component:UserMyProfileComponent},
