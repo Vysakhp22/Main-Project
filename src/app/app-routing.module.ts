@@ -25,6 +25,9 @@ import { NewUserComponent } from './Guest/new-user/new-user.component';
 import { ShopRegistrationComponent } from './Guest/shop-registration/shop-registration.component';
 import { PrisonerNavbarComponent } from './Prisoner/prisoner-navbar/prisoner-navbar.component';
 import { ShopNavbarComponent } from './Shop/shop-navbar/shop-navbar.component';
+import { UserChangePasswordComponent } from './User/user-change-password/user-change-password.component';
+import { UserEditProfileComponent } from './User/user-edit-profile/user-edit-profile.component';
+import { UserMyProfileComponent } from './User/user-my-profile/user-my-profile.component';
 import { UserNavbarComponent } from './User/user-navbar/user-navbar.component';
 
 const routes: Routes = [
@@ -54,7 +57,10 @@ children:[{path:'district',component:DistrictComponent},
 {path:'prisoner',component:PrisonerNavbarComponent},
 {path:'company',component:CompanyNavbarComponent},
 {path:'shop',component:ShopNavbarComponent},
-{path:'user',component:UserNavbarComponent}
+{path:'user',component:UserNavbarComponent,
+children:[{path:'changepassword',component:UserChangePasswordComponent},
+          {path:'usermyprofile',component:UserMyProfileComponent},
+          {path:'editprofile',component:UserEditProfileComponent}]}
 ];
 
 @NgModule({

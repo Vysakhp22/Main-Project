@@ -28,6 +28,9 @@ import { ViewAcceptedCompanyComponent } from './Admin/view-accepted-company/view
 import { ViewRejectedCompanyComponent } from './Admin/view-rejected-company/view-rejected-company.component';
 import { ProductComponent } from './Admin/product/product.component';
 import { ViewProductComponent } from './Admin/view-product/view-product.component';
+import { UserChangePasswordComponent } from './User/user-change-password/user-change-password.component';
+import { UserMyProfileComponent } from './User/user-my-profile/user-my-profile.component';
+import { UserEditProfileComponent } from './User/user-edit-profile/user-edit-profile.component';
 
 
 @NgModule({
@@ -57,7 +60,10 @@ import { ViewProductComponent } from './Admin/view-product/view-product.componen
     ViewAcceptedCompanyComponent,
     ViewRejectedCompanyComponent,
     ProductComponent,
-    ViewProductComponent
+    ViewProductComponent,
+    UserChangePasswordComponent,
+    UserMyProfileComponent,
+    UserEditProfileComponent
   ],
   imports: [
     BrowserModule,
