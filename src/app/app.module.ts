@@ -19,6 +19,15 @@ import { ProductCategoryComponent } from './Admin/product-category/product-categ
 import { ViewProductCategoryComponent } from './Admin/view-product-category/view-product-category.component';
 import { ShopRegistrationComponent } from './Guest/shop-registration/shop-registration.component';
 import { CompanyRegistrationComponent } from './Guest/company-registration/company-registration.component';
+import { NewUserComponent } from './Guest/new-user/new-user.component';
+import { ViewNewShopComponent } from './Admin/view-new-shop/view-new-shop.component';
+import { ViewAcceptedShopComponent } from './Admin/view-accepted-shop/view-accepted-shop.component';
+import { ViewRejectedShopComponent } from './Admin/view-rejected-shop/view-rejected-shop.component';
+import { ViewNewCompanyComponent } from './Admin/view-new-company/view-new-company.component';
+import { ViewAcceptedCompanyComponent } from './Admin/view-accepted-company/view-accepted-company.component';
+import { ViewRejectedCompanyComponent } from './Admin/view-rejected-company/view-rejected-company.component';
+import { ProductComponent } from './Admin/product/product.component';
+import { ViewProductComponent } from './Admin/view-product/view-product.component';
 
 
 @NgModule({
@@ -39,7 +48,16 @@ import { CompanyRegistrationComponent } from './Guest/company-registration/compa
     ProductCategoryComponent,
     ViewProductCategoryComponent,
     ShopRegistrationComponent,
-    CompanyRegistrationComponent
+    CompanyRegistrationComponent,
+    NewUserComponent,
+    ViewNewShopComponent,
+    ViewAcceptedShopComponent,
+    ViewRejectedShopComponent,
+    ViewNewCompanyComponent,
+    ViewAcceptedCompanyComponent,
+    ViewRejectedCompanyComponent,
+    ProductComponent,
+    ViewProductComponent
   ],
   imports: [
     BrowserModule,
