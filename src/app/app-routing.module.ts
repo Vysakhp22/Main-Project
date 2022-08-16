@@ -3,12 +3,14 @@ import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminnavbarComponent } from './Admin/adminnavbar/adminnavbar.component';
 import { DistrictComponent } from './Admin/district/district.component';
+import { JobdetailsComponent } from './Admin/jobdetails/jobdetails.component';
 import { PlaceComponent } from './Admin/place/place.component';
 import { ProductCategoryComponent } from './Admin/product-category/product-category.component';
 import { ProductComponent } from './Admin/product/product.component';
 import { ViewAcceptedCompanyComponent } from './Admin/view-accepted-company/view-accepted-company.component';
 import { ViewAcceptedShopComponent } from './Admin/view-accepted-shop/view-accepted-shop.component';
 import { ViewDistrictComponent } from './Admin/view-district/view-district.component';
+import { ViewJobDetailsComponent } from './Admin/view-job-details/view-job-details.component';
 import { ViewNewCompanyComponent } from './Admin/view-new-company/view-new-company.component';
 import { ViewNewShopComponent } from './Admin/view-new-shop/view-new-shop.component';
 import { ViewPlaceComponent } from './Admin/view-place/view-place.component';
@@ -28,6 +30,8 @@ import { CompanyChangePasswordComponent } from './Company/company-change-passwor
 import { CompanyEditProfileComponent } from './Company/company-edit-profile/company-edit-profile.component';
 import { CompanyMyProfileComponent } from './Company/company-my-profile/company-my-profile.component';
 import { CompanyNavbarComponent } from './Company/company-navbar/company-navbar.component';
+import { JobvacancyComponent } from './Company/jobvacancy/jobvacancy.component';
+import { ViewJobVacancyComponent } from './Company/view-job-vacancy/view-job-vacancy.component';
 import { CompanyRegistrationComponent } from './Guest/company-registration/company-registration.component';
 import { GuesthomeComponent } from './Guest/guesthome/guesthome.component';
 import { GuestloginComponent } from './Guest/guestlogin/guestlogin.component';
@@ -39,10 +43,12 @@ import { ShopChangePasswordComponent } from './Shop/shop-change-password/shop-ch
 import { ShopEditProfileComponent } from './Shop/shop-edit-profile/shop-edit-profile.component';
 import { ShopMyProfileComponent } from './Shop/shop-my-profile/shop-my-profile.component';
 import { ShopNavbarComponent } from './Shop/shop-navbar/shop-navbar.component';
+import { ShopSearchProductComponent } from './Shop/shop-search-product/shop-search-product.component';
 import { UserChangePasswordComponent } from './User/user-change-password/user-change-password.component';
 import { UserEditProfileComponent } from './User/user-edit-profile/user-edit-profile.component';
 import { UserMyProfileComponent } from './User/user-my-profile/user-my-profile.component';
 import { UserNavbarComponent } from './User/user-navbar/user-navbar.component';
+import { UserSearchProductComponent } from './User/user-search-product/user-search-product.component';
 
 const routes: Routes = [
   {path:'',component:GuestnavComponent,
@@ -67,20 +73,26 @@ children:[{path:'district',component:DistrictComponent},
           {path:'acceptedcompany',component:ViewAcceptedCompanyComponent},
           {path:'rejectedcompany',component:ViewRejectedCompanyComponent},
           {path:'product',component:ProductComponent},
-          {path:'viewproduct',component:ViewProductComponent}]},
+          {path:'viewproduct',component:ViewProductComponent},
+          {path:'jobdetails',component:JobdetailsComponent},
+          {path:'viewjobdetails',component:ViewJobDetailsComponent}]},
 {path:'prisoner',component:PrisonerNavbarComponent},
 {path:'company',component:CompanyNavbarComponent,
 children:[{path:'companymyprofile',component:CompanyMyProfileComponent},
           {path:'companychangepassword',component:CompanyChangePasswordComponent},
-          {path:'companyeditprofile',component:CompanyEditProfileComponent}]},
+          {path:'companyeditprofile',component:CompanyEditProfileComponent},
+          {path:'jobvacancy',component:JobvacancyComponent},
+          {path:'viewjobvacancy',component:ViewJobVacancyComponent}]},
 {path:'shop',component:ShopNavbarComponent,
 children:[{path:'shopmyprofile',component:ShopMyProfileComponent},
           {path:'shopchangepassword',component:ShopChangePasswordComponent},
-          {path:'shopeditprofile',component:ShopEditProfileComponent}]},
+          {path:'shopeditprofile',component:ShopEditProfileComponent},
+          {path:'shopsearchproduct',component:ShopSearchProductComponent}]},
 {path:'user',component:UserNavbarComponent,
 children:[{path:'changepassword',component:UserChangePasswordComponent},
           {path:'usermyprofile',component:UserMyProfileComponent},
-          {path:'editprofile',component:UserEditProfileComponent}]},
+          {path:'editprofile',component:UserEditProfileComponent},
+          {path:'usersearchproduct',component:UserSearchProductComponent}]},
 {path:'centraljail',component:CentraljailnavbarComponent,
 children:[{path:'prisonerregister',component:PrisonerRegistrationComponent},
           {path:'productrate',component:ProductRateComponent},

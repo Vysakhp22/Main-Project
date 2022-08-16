@@ -45,6 +45,12 @@ import { CentraljailnavbarComponent } from './Centraljail/centraljailnavbar/cent
 import { CentraljailMyprofileComponent } from './Centraljail/centraljail-myprofile/centraljail-myprofile.component';
 import { CentraljailEditProfileComponent } from './Centraljail/centraljail-edit-profile/centraljail-edit-profile.component';
 import { CentraljailChangePasswordComponent } from './Centraljail/centraljail-change-password/centraljail-change-password.component';
+import { ShopSearchProductComponent } from './Shop/shop-search-product/shop-search-product.component';
+import { UserSearchProductComponent } from './User/user-search-product/user-search-product.component';
+import { JobdetailsComponent } from './Admin/jobdetails/jobdetails.component';
+import { ViewJobDetailsComponent } from './Admin/view-job-details/view-job-details.component';
+import { JobvacancyComponent } from './Company/jobvacancy/jobvacancy.component';
+import { ViewJobVacancyComponent } from './Company/view-job-vacancy/view-job-vacancy.component';
 
 
 @NgModule({
@@ -91,7 +97,13 @@ import { CentraljailChangePasswordComponent } from './Centraljail/centraljail-ch
     CentraljailnavbarComponent,
     CentraljailMyprofileComponent,
     CentraljailEditProfileComponent,
-    CentraljailChangePasswordComponent
+    CentraljailChangePasswordComponent,
+    ShopSearchProductComponent,
+    UserSearchProductComponent,
+    JobdetailsComponent,
+    ViewJobDetailsComponent,
+    JobvacancyComponent,
+    ViewJobVacancyComponent
   ],
   imports: [
     BrowserModule,
