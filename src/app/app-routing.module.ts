@@ -16,6 +16,14 @@ import { ViewProductCategoryComponent } from './Admin/view-product-category/view
 import { ViewProductComponent } from './Admin/view-product/view-product.component';
 import { ViewRejectedCompanyComponent } from './Admin/view-rejected-company/view-rejected-company.component';
 import { ViewRejectedShopComponent } from './Admin/view-rejected-shop/view-rejected-shop.component';
+import { CentraljailChangePasswordComponent } from './Centraljail/centraljail-change-password/centraljail-change-password.component';
+import { CentraljailEditProfileComponent } from './Centraljail/centraljail-edit-profile/centraljail-edit-profile.component';
+import { CentraljailMyprofileComponent } from './Centraljail/centraljail-myprofile/centraljail-myprofile.component';
+import { CentraljailnavbarComponent } from './Centraljail/centraljailnavbar/centraljailnavbar.component';
+import { PrisonerRegistrationComponent } from './Centraljail/prisoner-registration/prisoner-registration.component';
+import { ProductRateComponent } from './Centraljail/product-rate/product-rate.component';
+import { ViewPrisonerComponent } from './Centraljail/view-prisoner/view-prisoner.component';
+import { ViewProductRatesComponent } from './Centraljail/view-product-rates/view-product-rates.component';
 import { CompanyChangePasswordComponent } from './Company/company-change-password/company-change-password.component';
 import { CompanyEditProfileComponent } from './Company/company-edit-profile/company-edit-profile.component';
 import { CompanyMyProfileComponent } from './Company/company-my-profile/company-my-profile.component';
@@ -72,7 +80,15 @@ children:[{path:'shopmyprofile',component:ShopMyProfileComponent},
 {path:'user',component:UserNavbarComponent,
 children:[{path:'changepassword',component:UserChangePasswordComponent},
           {path:'usermyprofile',component:UserMyProfileComponent},
-          {path:'editprofile',component:UserEditProfileComponent}]}
+          {path:'editprofile',component:UserEditProfileComponent}]},
+{path:'centraljail',component:CentraljailnavbarComponent,
+children:[{path:'prisonerregister',component:PrisonerRegistrationComponent},
+          {path:'productrate',component:ProductRateComponent},
+          {path:'viewprisoner',component:ViewPrisonerComponent},
+          {path:'viewproductrates',component:ViewProductRatesComponent},
+          {path:'centraljailmyprofile',component:CentraljailMyprofileComponent},
+          {path:'centraljaileditprofile',component:CentraljailEditProfileComponent},
+          {path:'centraljailchangepassword',component:CentraljailChangePasswordComponent}]}
 ];
 
 @NgModule({

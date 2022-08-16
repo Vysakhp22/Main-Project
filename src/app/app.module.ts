@@ -37,6 +37,14 @@ import { ShopEditProfileComponent } from './Shop/shop-edit-profile/shop-edit-pro
 import { CompanyMyProfileComponent } from './Company/company-my-profile/company-my-profile.component';
 import { CompanyChangePasswordComponent } from './Company/company-change-password/company-change-password.component';
 import { CompanyEditProfileComponent } from './Company/company-edit-profile/company-edit-profile.component';
+import { PrisonerRegistrationComponent } from './Centraljail/prisoner-registration/prisoner-registration.component';
+import { ViewPrisonerComponent } from './Centraljail/view-prisoner/view-prisoner.component';
+import { ProductRateComponent } from './Centraljail/product-rate/product-rate.component';
+import { ViewProductRatesComponent } from './Centraljail/view-product-rates/view-product-rates.component';
+import { CentraljailnavbarComponent } from './Centraljail/centraljailnavbar/centraljailnavbar.component';
+import { CentraljailMyprofileComponent } from './Centraljail/centraljail-myprofile/centraljail-myprofile.component';
+import { CentraljailEditProfileComponent } from './Centraljail/centraljail-edit-profile/centraljail-edit-profile.component';
+import { CentraljailChangePasswordComponent } from './Centraljail/centraljail-change-password/centraljail-change-password.component';
 
 
 @NgModule({
@@ -75,7 +83,15 @@ import { CompanyEditProfileComponent } from './Company/company-edit-profile/comp
     ShopEditProfileComponent,
     CompanyMyProfileComponent,
     CompanyChangePasswordComponent,
-    CompanyEditProfileComponent
+    CompanyEditProfileComponent,
+    PrisonerRegistrationComponent,
+    ViewPrisonerComponent,
+    ProductRateComponent,
+    ViewProductRatesComponent,
+    CentraljailnavbarComponent,
+    CentraljailMyprofileComponent,
+    CentraljailEditProfileComponent,
+    CentraljailChangePasswordComponent
   ],
   imports: [
     BrowserModule,
