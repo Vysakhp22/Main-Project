@@ -54,6 +54,13 @@ import { ViewJobVacancyComponent } from './Company/view-job-vacancy/view-job-vac
 import { ViewNewJobapplicationsComponent } from './Company/view-new-jobapplications/view-new-jobapplications.component';
 import { ViewAcceptedJobapplicationsComponent } from './Company/view-accepted-jobapplications/view-accepted-jobapplications.component';
 import { ViewRejectedJobapplicationsComponent } from './Company/view-rejected-jobapplications/view-rejected-jobapplications.component';
+import { ViewNewShopOrdersComponent } from './Centraljail/view-new-shop-orders/view-new-shop-orders.component';
+import { ViewAcceptedShopOrdersComponent } from './Centraljail/view-accepted-shop-orders/view-accepted-shop-orders.component';
+import { ViewRejectedShopOrdersComponent } from './Centraljail/view-rejected-shop-orders/view-rejected-shop-orders.component';
+import { ViewNewUserOrdersComponent } from './Centraljail/view-new-user-orders/view-new-user-orders.component';
+import { ViewAcceptedUserOrdersComponent } from './Centraljail/view-accepted-user-orders/view-accepted-user-orders.component';
+import { ViewRejectedUserOrdersComponent } from './Centraljail/view-rejected-user-orders/view-rejected-user-orders.component';
+import { SearchCompanyComponent } from './Prisoner/search-company/search-company.component';
 
 
 @NgModule({
@@ -109,7 +116,14 @@ import { ViewRejectedJobapplicationsComponent } from './Company/view-rejected-jo
     ViewJobVacancyComponent,
     ViewNewJobapplicationsComponent,
     ViewAcceptedJobapplicationsComponent,
-    ViewRejectedJobapplicationsComponent
+    ViewRejectedJobapplicationsComponent,
+    ViewNewShopOrdersComponent,
+    ViewAcceptedShopOrdersComponent,
+    ViewRejectedShopOrdersComponent,
+    ViewNewUserOrdersComponent,
+    ViewAcceptedUserOrdersComponent,
+    ViewRejectedUserOrdersComponent,
+    SearchCompanyComponent
   ],
   imports: [
     BrowserModule,
