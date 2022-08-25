@@ -51,6 +51,9 @@ import { JobdetailsComponent } from './Admin/jobdetails/jobdetails.component';
 import { ViewJobDetailsComponent } from './Admin/view-job-details/view-job-details.component';
 import { JobvacancyComponent } from './Company/jobvacancy/jobvacancy.component';
 import { ViewJobVacancyComponent } from './Company/view-job-vacancy/view-job-vacancy.component';
+import { ViewNewJobapplicationsComponent } from './Company/view-new-jobapplications/view-new-jobapplications.component';
+import { ViewAcceptedJobapplicationsComponent } from './Company/view-accepted-jobapplications/view-accepted-jobapplications.component';
+import { ViewRejectedJobapplicationsComponent } from './Company/view-rejected-jobapplications/view-rejected-jobapplications.component';
 
 
 @NgModule({
@@ -103,7 +106,10 @@ import { ViewJobVacancyComponent } from './Company/view-job-vacancy/view-job-vac
     JobdetailsComponent,
     ViewJobDetailsComponent,
     JobvacancyComponent,
-    ViewJobVacancyComponent
+    ViewJobVacancyComponent,
+    ViewNewJobapplicationsComponent,
+    ViewAcceptedJobapplicationsComponent,
+    ViewRejectedJobapplicationsComponent
   ],
   imports: [
     BrowserModule,

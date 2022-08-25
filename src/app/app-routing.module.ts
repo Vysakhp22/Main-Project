@@ -31,7 +31,10 @@ import { CompanyEditProfileComponent } from './Company/company-edit-profile/comp
 import { CompanyMyProfileComponent } from './Company/company-my-profile/company-my-profile.component';
 import { CompanyNavbarComponent } from './Company/company-navbar/company-navbar.component';
 import { JobvacancyComponent } from './Company/jobvacancy/jobvacancy.component';
+import { ViewAcceptedJobapplicationsComponent } from './Company/view-accepted-jobapplications/view-accepted-jobapplications.component';
 import { ViewJobVacancyComponent } from './Company/view-job-vacancy/view-job-vacancy.component';
+import { ViewNewJobapplicationsComponent } from './Company/view-new-jobapplications/view-new-jobapplications.component';
+import { ViewRejectedJobapplicationsComponent } from './Company/view-rejected-jobapplications/view-rejected-jobapplications.component';
 import { CompanyRegistrationComponent } from './Guest/company-registration/company-registration.component';
 import { GuesthomeComponent } from './Guest/guesthome/guesthome.component';
 import { GuestloginComponent } from './Guest/guestlogin/guestlogin.component';
@@ -82,7 +85,10 @@ children:[{path:'companymyprofile',component:CompanyMyProfileComponent},
           {path:'companychangepassword',component:CompanyChangePasswordComponent},
           {path:'companyeditprofile',component:CompanyEditProfileComponent},
           {path:'jobvacancy',component:JobvacancyComponent},
-          {path:'viewjobvacancy',component:ViewJobVacancyComponent}]},
+          {path:'viewjobvacancy',component:ViewJobVacancyComponent},
+          {path:'viewjobapplicants',component:ViewNewJobapplicationsComponent},
+          {path:'viewacceptedjobapplications',component:ViewAcceptedJobapplicationsComponent},
+          {path:'viewrejectedapplications',component:ViewRejectedJobapplicationsComponent}]},
 {path:'shop',component:ShopNavbarComponent,
 children:[{path:'shopmyprofile',component:ShopMyProfileComponent},
           {path:'shopchangepassword',component:ShopChangePasswordComponent},
