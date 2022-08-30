@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -61,6 +64,7 @@ import { ViewNewUserOrdersComponent } from './Centraljail/view-new-user-orders/v
 import { ViewAcceptedUserOrdersComponent } from './Centraljail/view-accepted-user-orders/view-accepted-user-orders.component';
 import { ViewRejectedUserOrdersComponent } from './Centraljail/view-rejected-user-orders/view-rejected-user-orders.component';
 import { SearchCompanyComponent } from './Prisoner/search-company/search-company.component';
+
 
 
 @NgModule({
@@ -128,7 +132,9 @@ import { SearchCompanyComponent } from './Prisoner/search-company/search-company
   imports: [
     BrowserModule,
     AppRoutingModule,
-
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
