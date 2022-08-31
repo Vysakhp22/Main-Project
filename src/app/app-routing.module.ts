@@ -71,6 +71,7 @@ children:[
 ]},
 {path:'admin',component:AdminnavbarComponent,
 children:[{path:'district',component:DistrictComponent},
+          {path:'district/:id',component:DistrictComponent},
           {path:'viewdistrict',component:ViewDistrictComponent},
           {path:'place',component:PlaceComponent},
           {path:'viewplace',component:ViewPlaceComponent},

@@ -1,6 +1,6 @@
 <html>
 
-<body>
+<body >
   <div class="row">
     <div class="col-md-6"
       style="border:.1px solid rgb(228, 113, 184); border-radius: 10px;top: 10px; margin-top: 10%; margin-left: 15%;">
@@ -9,27 +9,34 @@
           <h4>Place Register</h4>
         </div>
         <div>
-          <form>
+          <form [formGroup]="placeForm">
             <div class="form-group">
               <label for="exampleFormControlSelect1">District</label>
-              <select  class="form-control" id="exampleFormControlSelect1">
-                <option selected>--select--</option>
-                <option value="saab">Saab</option>
-                <option value="opel">Opel</option>
-                <option value="audi">Audi</option>
+              <select  class="form-control" id="exampleFormControlSelect1" formControlName="distid">
+                <option  value="" selected disabled >--select--</option>
+                <option *ngFor="let dist of distarray" value="{{dist.district_id}}">{{dist.district_name}}</option>
               </select>
+              <span class="form-control-sm text-danger" for="customFile"
+                                *ngIf="(placeFormControl.distid.touched || submitted) && placeFormControl.distid.errors?.['required']">
+                                Please select a district
+                            </span>
             </div>
+            <br>
             <div class="form-group">
               <label>Place:</label>
-              <input type="text" class="form-control" placeholder="Place">
+              <input type="text" id="place"  class="form-control" placeholder="Place" formControlName="place">
+              <span class="form-control-sm text-danger" for="customFile"
+                                *ngIf="(placeFormControl.place.touched || submitted) && placeFormControl.place.errors?.['required']">
+                                Place is required
+                            </span>
             </div>
             <div class="form-group">
               <div class="form-check">
 
               </div>
             </div>
-            &nbsp;&nbsp;&nbsp;<button type="submit" class="btn btn-primary">Submit</button>&nbsp;
-            <button type="reset" class="btn btn-danger">Cancel</button>
+            &nbsp;&nbsp;&nbsp;<button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>&nbsp;
+            <button type="reset" class="btn btn-danger" >Cancel</button>
           </form>
           <br>
           <br>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl,FormGroup, Validators} from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AdminServiceService } from '../admin-service.service';
 
 
@@ -10,14 +10,20 @@ import { AdminServiceService } from '../admin-service.service';
   styleUrls: ['./district.component.css']
 })
 export class DistrictComponent implements OnInit {
+id:any;
 
-
-  constructor(private adminservice:AdminServiceService,private route:Router) { }
+  constructor(private adminservice:AdminServiceService,private route:Router,private ac:ActivatedRoute) { }
   districtform=new FormGroup({
     district:new FormControl('',Validators.required)
   })
 
   ngOnInit(): void {
+    this.id=this.ac.snapshot.paramMap.get("id")
+    this.adminservice.editDist({id:this.id}).then((data:any)=>{
+      this.districtform.patchValue({
+        district:data.data[0].district_name
+      })
+    })
   }
 
   districtSubmit(){
@@ -27,10 +33,18 @@ export class DistrictComponent implements OnInit {
         console.log(this.districtform.value)
          this.adminservice.districtRegister(this.districtform.value).then((data:any)=>{
          console.log(data)
-         })
-        alert('District Inserted')
+         if(data.alert==='Success'){
+          alert('District Inserted')
         this.districtform.reset()
         this.route.navigateByUrl('/admin/viewdistrict')
+         }
+         else if(data.alert=='Existing'){
+          alert("Data Already Exist")
+         }
+         else{
+          alert("Failed")
+         }
+         })
       }
       else{
         alert("Please enter a valid district name")

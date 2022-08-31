@@ -10,11 +10,12 @@
       <th scope="col">Action</th>
     </tr>
   </thead>
-  <tbody *ngFor="let i=index;">
-    <tr>
-      <th scope="row">{{i}}</th>
-      <td>Mark</td>
-      <td>Otto</td>
+  <tbody >
+    <tr *ngFor="let i=index; let item of placearray">
+      <th scope="row">{{i+1}}</th>
+      <td>{{item.district_name}}</td>
+      <td>{{item.place_name}}</td>
+      <td>&nbsp;<button class="btn btn-outline-danger btn-sm bi bi-trash3"></button></td>
     </tr>
   </tbody>
 </table>

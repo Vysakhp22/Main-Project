@@ -10,9 +10,18 @@ export class AdminServiceService {
 
   constructor(private client:HttpClient) { }
   districtRegister(data:any){
-    return this.client.post("http://localhost/Ex-Convict/Admin/District.php",data).toPromise()
+    return this.client.post("http://localhost/Ex-Convict/Admin/District.php",data).toPromise();
   }
   viewdistrict(){
-    return this.client.get("http://localhost/Ex-Convict/Admin/viewdistrict.php").toPromise()
+    return this.client.get("http://localhost/Ex-Convict/Admin/viewdistrict.php").toPromise();
+  }
+  placeRegister(data:any){
+    return this.client.post("http://localhost/Ex-Convict/Admin/Place.php",data).toPromise();
+  }
+  viewPlace(){
+    return this.client.get("http://localhost/Ex-Convict/Admin/viewplace.php").toPromise();
+  }
+  editDist(data:any){
+    return this.client.post("http://localhost/Ex-Convict/Admin/editdistrict.php",data).toPromise();
   }
 }

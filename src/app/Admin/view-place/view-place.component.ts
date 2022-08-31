@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminServiceService } from '../admin-service.service';
 
 @Component({
   selector: 'app-view-place',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-place.component.css']
 })
 export class ViewPlaceComponent implements OnInit {
+  placearray:any[]=[];
 
-  constructor() { }
+  constructor(private adminservice:AdminServiceService) { }
 
   ngOnInit(): void {
+    this.adminservice.viewPlace().then((data:any)=>{
+      this.placearray=data;
+    })
   }
 
 }
