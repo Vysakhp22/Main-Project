@@ -9,13 +9,17 @@
           <h4>Product Category</h4>
         </div>
         <div>
-          <form>
+          <form [formGroup]="categoryForm" >
             <div class="form-group">
               <label>Category:</label>
-              <input type="text" class="form-control" placeholder="Category">
+              <input type="text" class="form-control" placeholder="Category" formControlName="category">
+              <span class="form-control-sm text-danger" for="customFile"
+                                *ngIf="(categoryFormcontrols.category.touched || submitted) && categoryFormcontrols.category.errors?.['required']">
+                                 category is required
+                            </span>
             </div><br>
-            &nbsp;<button type="submit" class="btn btn-primary">Submit</button>&nbsp;
-            <button type="reset" class="btn btn-danger">Cancel</button>
+            &nbsp;<button type="submit" class="btn btn-primary col-md-3"  [disabled]="!categoryForm.valid" *ngIf="!id" (click)="onSubmit()">Submit</button>&nbsp;<button type="submit" class="btn btn-primary col-md-3"  *ngIf="id" (click)="onUpdate()">Update</button>&nbsp;
+            <button type="reset" class="btn btn-danger col-md-3">Cancel</button>
           </form>
           <br>
           <br>

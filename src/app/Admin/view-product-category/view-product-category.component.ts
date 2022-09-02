@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminServiceService } from '../admin-service.service';
 
 @Component({
   selector: 'app-view-product-category',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-product-category.component.css']
 })
 export class ViewProductCategoryComponent implements OnInit {
-
-  constructor() { }
+  categoryarray:any[]=[];
+  constructor(private adminservice:AdminServiceService) { }
 
   ngOnInit(): void {
+    this.adminservice.viewCategory().then((data:any)=>{
+      this.categoryarray=data;
+    });
   }
 
 }

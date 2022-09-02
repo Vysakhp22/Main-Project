@@ -27,6 +27,7 @@ export class PlaceComponent implements OnInit {
   }
   onSubmit(){
     this.submitted = true;
+    if(this.placeForm.valid){
     var nameexp = /^([A-Za-z ]*)$/;
     if(this.placeForm.value.place?.match(nameexp)){
       console.log(this.placeForm.value)
@@ -40,7 +41,10 @@ export class PlaceComponent implements OnInit {
     else{
       alert("Please enter a valid place name")
     }
-
   }
+  else{
+      alert("Please provide a place name")
+  }
+}
 
 }
