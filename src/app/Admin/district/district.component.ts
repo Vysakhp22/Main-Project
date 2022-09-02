@@ -30,28 +30,56 @@ id:any;
     if(this.districtform.valid){
       var nameexp = /^([A-Za-z ]*)$/;
       if(this.districtform.value.district?.match(nameexp)){
-        console.log(this.districtform.value)
+        console.log(this.districtform.value);
          this.adminservice.districtRegister(this.districtform.value).then((data:any)=>{
-         console.log(data)
+         console.log(data);
          if(data.alert==='Success'){
-          alert('District Inserted')
-        this.districtform.reset()
-        this.route.navigateByUrl('/admin/viewdistrict')
+          alert('District Inserted');
+        this.districtform.reset();
+        this.route.navigateByUrl('/admin/viewdistrict');
          }
          else if(data.alert=='Existing'){
-          alert("Data Already Exist")
+          alert("Data Already Exist");
          }
          else{
-          alert("Failed")
+          alert("Failed");
          }
-         })
+         });
       }
       else{
-        alert("Please enter a valid district name")
+        alert("Please enter a valid district name");
       }
     }
     else{
-      alert("Please provide a district name")
+      alert("Please provide a district name");
+    }
+  }
+  updateSubmit(){
+    if(this.districtform.valid){
+      var nameexp = /^([A-Za-z ]*)$/;
+      if(this.districtform.value.district?.match(nameexp)){
+        console.log(this.districtform.value);
+        this.adminservice.updateDist({id:this.id,...this.districtform.value}).then((data:any)=>{
+          if(data.alert==='Success'){
+            alert("Data Updated");
+            this.districtform.reset();
+             this.route.navigateByUrl('/admin/viewdistrict');
+          }
+          else if(data.alert==='Existing'){
+            alert("Data Already Exist");
+          }
+          else{
+            alert("Failed");
+          }
+        });
+
+      }
+      else{
+        alert("Please enter a valid district name");
+      }
+    }
+    else{
+      alert("Please provide a district name");
     }
   }
 

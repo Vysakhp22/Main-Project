@@ -16,7 +16,8 @@
             </div>
             <br>
             <div style="margin-left:17%;">
-              <button type="submit" class="btn btn-primary col-md-3" style="padding: 5px;" (click)="districtSubmit()">Save</button>&nbsp;
+              <button type="submit" class="btn btn-primary col-md-3" style="padding: 5px;" *ngIf="id==null" (click)="districtSubmit()">Save</button>
+              <button type="update" class="btn btn-primary col-md-3" style="padding: 5px;" *ngIf="id!=null" (click)="updateSubmit();">Update</button>&nbsp;
               <button type="reset" class="btn btn-danger col-md-3" style="padding: 5px;">Cancel</button>
             </div>
           </form>

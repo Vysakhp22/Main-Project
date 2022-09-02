@@ -24,4 +24,10 @@ export class AdminServiceService {
   editDist(data:any){
     return this.client.post("http://localhost/Ex-Convict/Admin/editdistrict.php",data).toPromise();
   }
+  updateDist(data:any){
+    return this.client.post("http://localhost/Ex-Convict/Admin/updatedist.php",data).toPromise();
+  }
+  delPlace(data:any){
+    return this.client.post("http://localhost/Ex-Convict/Admin/placedelete.php",data).toPromise();
+  }
 }

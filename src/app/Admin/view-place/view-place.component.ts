@@ -16,5 +16,14 @@ export class ViewPlaceComponent implements OnInit {
       this.placearray=data;
     })
   }
+  placeDelete(id:any){
+    this.adminservice.delPlace({id}).then((data:any)=>{
+      console.log(data);
+      if(data.alert==='Success'){
+        alert("Data Deleted")
+      }
+    });
+    window.location.reload();
+  }
 
 }
