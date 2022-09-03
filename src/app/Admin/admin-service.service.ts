@@ -42,4 +42,16 @@ export class AdminServiceService {
   updateCategory(data:any){
     return this.client.post("http://localhost/Ex-Convict/Admin/updatecategory.php",data).toPromise();
   }
+  distDelete(data:any){
+    return this.client.post("http://localhost/Ex-Convict/Admin/districtdelete.php",data).toPromise();
+  }
+  productImg(data:any){
+    return this.client.post("http://localhost/Ex-Convict/Admin/ProductImage.php",data).toPromise();
+  }
+  productRegis(data:any){
+    return this.client.post("http://localhost/Ex-Convict/Admin/productregister.php",data).toPromise();
+  }
+  viewProduct(){
+    return this.client.get("http://localhost/Ex-Convict/Admin/viewproduct.php").toPromise();
+  }
 }

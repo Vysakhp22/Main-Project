@@ -20,7 +20,7 @@ export class PlaceComponent implements OnInit {
     return this.placeForm.controls;
   }
 
-  ngOnInit(): void {[]
+  ngOnInit(): void {
     this.adminservice.viewdistrict().then((data:any)=>{
       this.distarray=data
     })

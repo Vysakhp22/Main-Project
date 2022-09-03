@@ -9,38 +9,36 @@
           <h4>Product</h4>
         </div>
         <div style="margin-left: 0%;">
-          <form>
+          <form [formGroup]="productForm">
             <div class="row">
               <label>Product Category</label>
               <div class="col-md-12">
-                <select class="form-control">
-                  <option selected>--select--</option>
-                  <option value="saab">Saab</option>
-                  <option value="opel">Opel</option>
-                  <option value="audi">Audi</option>
+                <select class="form-control" formControlName="catid">
+                  <option value="" selected disabled>--select--</option>
+                  <option *ngFor="let item of catarray;" value="{{item.productcategory_id}}">{{item.productcategory_name}}</option>
                 </select>
               </div>
             </div><br>
             <div class="row">
               <label>Product Name</label>
               <div class="col-md-12">
-                <input type="Text" class="form-control" placeholder="contact" aria-label="Product Name">
+                <input type="Text" class="form-control" placeholder="Product Name" aria-label="Product Name" formControlName="product">
               </div>
             </div><br>
             <div class="row">
               <label>Photo:</label>
               <div class="col-md-12">
-                <input type="file" class="form-control">
+                <input type="file" class="form-control"  (change)="fileUpload($event)">
               </div>
             </div><br>
             <div class="row">
               <label>Details</label>
               <div class="col-md-12">
-                <textarea class="form-control" placeholder="Product Details" id="floatingTextarea"></textarea>
+                <textarea class="form-control" placeholder="Product Details" id="floatingTextarea" formControlName="details"></textarea>
               </div>
             </div>
             <br>
-            &nbsp;<button type="submit" class="btn btn-primary">Submit</button>&nbsp;
+            &nbsp;<button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>&nbsp;
             <button type="reset" class="btn btn-danger">Cancel</button>
           </form>
           <br>

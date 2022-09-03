@@ -16,5 +16,16 @@ export class ViewDistrictComponent implements OnInit {
       this.dataarray=data
     })
   }
-
+  deleteDist(id:any){
+    console.log(id);
+    this.adminsrvice.distDelete({id}).then((data:any)=>{
+      if(data.alert==='Success'){
+        alert("District deleted");
+      }
+      else{
+        alert("Failed");
+      }
+    });
+    window.location.reload();
+  }
 }
