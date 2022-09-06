@@ -9,42 +9,49 @@
           <h4>User Register</h4>
         </div>
         <div>
-          <form>
+          <form [formGroup]="newUser">
             <div class="row">
               <div class="col-md-12">
-                <input type="text" class="form-control" placeholder="Name">
+                <input type="text" class="form-control" placeholder="Name" formControlName="username">
+                <small class="text-danger" *ngIf="f.username.errors?.['required'] && (f.username.touched || submitted)">{{'isRequired'}}</small>
               </div>
             </div>
             <br>
             <div class="row">
               <div class="col">
-                <input type="text" class="form-control" placeholder="Email id">
+                <input type="text" class="form-control" placeholder="Email id" formControlName="email" (blur)="checkValid()">
+                <small class="text-danger" *ngIf="f.email.errors?.['required'] && (f.email.touched || submitted)">{{'isRequired'}}</small>
+                <small class="text-danger" *ngIf="f.email.errors?.['email'] && (f.email.touched || submitted)">{{'isInvalid'}}</small>
+                <small class="text-danger" *ngIf="data===true">{{'Data already exist'}}</small>
               </div>
               <div class="col">
-                <input type="text" class="form-control" placeholder="Contact Number">
+                <input type="text" class="form-control" placeholder="Contact Number" formControlName="contact">
+                <small class="text-danger" *ngIf="f.contact.errors?.['reqiured'] && (f.contact.touched || submitted )">{{'isRequired'}}</small>
+                <small class="text-danger" *ngIf="f.contact.errors?.['minlength'] && (f.contact.touched || submitted )">{{'inInvalid'}}</small>
+                <small class="text-danger" *ngIf="f.contact.errors?.['maxlength'] && (f.contact.touched || submitted )">{{'isInvalid'}}</small>
               </div>
             </div>
             <br>
             <div class="row">
               <div class="col-md-12">
                 &nbsp;&nbsp;&nbsp;&nbsp;<label class="custom-file-label" for="customFile">Gender:</label>&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp; <input class="form-check-input" type="radio" name="flexRadioDefault"
-                  value="Male">
+                &nbsp;&nbsp;&nbsp;&nbsp; <input class="form-check-input" type="radio" name="gender" formControlName="gender" value="Male">
                 &nbsp;<label class="form-check-label" for="flexRadioDefault1">
                   Male
                 </label>
-                &nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="flexRadioDefault"
-                  value="Female">
+                &nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="gender" formControlName="gender" value="Female">
                 &nbsp;<label class="form-check-label" for="flexRadioDefault1">
                   Female
                 </label>
               </div>
+              <small class="text-danger" style="margin-left: 3%;" ng *ngIf="f.gender.errors?.['required'] && (f.gender.touched || submitted)">{{'isRequired'}}</small>
             </div>
 
             <br>
             <div class="row">
               <div class="col-md-12">
-                <textarea class="form-control" placeholder="Enter your address"></textarea>
+                <textarea class="form-control" placeholder="Enter your address" formControlName="address"></textarea>
+              <small class="text-danger" *ngIf="f.address.errors?.['required'] && (f.address.touched || submitted)">{{'isRequired'}}</small>
               </div>
             </div><br>
             <!-- <div class="row" >
@@ -81,10 +88,15 @@
 
             <div class="row">
               <div class="col">
-                <input type="password" class="form-control" placeholder="Password">
+                <input type="password" class="form-control" placeholder="Password" formControlName="password">
+                <small class="text-danger" *ngIf="f.password.errors?.['required'] && (f.password.touched || submitted)">{{'isRequired'}}</small>
+                <small class="text-danger" *ngIf="f.password.errors?.['password'] && (f.password.touched || submitted)">{{'isInvalid'}}</small>
+                <small class="text-danger" *ngIf="f.password.errors?.['minlength'] && (f.password.touched || submitted)">{{'tooShort'}}</small>
               </div>
               <div class="col">
-                <input type="password" class="form-control" placeholder="Confirm Password">
+                <input type="password" class="form-control" placeholder="Confirm Password" formControlName="cpassword">
+              <small class="text-danger" *ngIf="f.cpassword.errors?.['required'] && (f.cpassword.touched || submitted)"> {{'isRequired'}}</small>
+              <small class="text-danger" *ngIf="!f.cpassword.errors?.['required'] && f.cpassword.errors?.['confirm'] && (f.cpassword.touched || submitted)">{{'notMatch'}}</small>
               </div>
             </div>
             <div class="form-group">
@@ -92,7 +104,7 @@
 
               </div>
             </div>
-            &nbsp;<button type="submit" class="btn btn-primary">Submit</button>&nbsp;
+            &nbsp;<button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>&nbsp;
             <button type="reset" class="btn btn-danger">Cancel</button>
           </form>
           <br>

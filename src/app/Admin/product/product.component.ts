@@ -46,10 +46,36 @@ export class ProductComponent implements OnInit {
       //console.log(this.productForm.value);
     });
   }
+
+  get productFormcontrols(){
+    return this.productForm.controls;
+  }
+
 onSubmit(){
-  this.adminservice.productRegis(this.productForm.value).then((data:any)=>{
-    console.log(data)
+  this.submitted=true;
+  if(this.productForm.valid){
+    var nameexp = /^([A-Za-z ]*)$/;
+    if(this.productForm.value.product?.match(nameexp)){
+      this.adminservice.productRegis(this.productForm.value).then((data:any)=>{
+      console.log(data)
+      if(data.alert==='Success'){
+        alert("Product Added");
+      }
+      else if(data.alert==='Existing'){
+        alert("Product already exist");
+      }
+      else{
+        alert("failed");
+      }
   });
+    }
+    else{
+      alert("please enter a valid product name");
+    }
+  }
+  else{
+    alert("please fill the data");
+  }
 }
 
 }

@@ -17,6 +17,10 @@
                   <option value="" selected disabled>--select--</option>
                   <option *ngFor="let item of catarray;" value="{{item.productcategory_id}}">{{item.productcategory_name}}</option>
                 </select>
+                <span class="form-control-sm text-danger" for="customFile"
+                                *ngIf="(productFormcontrols.catid.touched || submitted) && productFormcontrols.catid.errors?.['required']">
+                                 please select a category
+                            </span>
               </div>
             </div><br>
             <div class="row">
@@ -24,18 +28,30 @@
               <div class="col-md-12">
                 <input type="Text" class="form-control" placeholder="Product Name" aria-label="Product Name" formControlName="product">
               </div>
+              <span class="form-control-sm text-danger" for="customFile"
+                                *ngIf="(productFormcontrols.product.touched || submitted) && productFormcontrols.product.errors?.['required']">
+                                 &nbsp; product name is required
+                            </span>
             </div><br>
             <div class="row">
               <label>Photo:</label>
               <div class="col-md-12">
                 <input type="file" class="form-control"  (change)="fileUpload($event)">
               </div>
+              <span class="form-control-sm text-danger" for="customFile"
+                                *ngIf="(productFormcontrols.image.touched || submitted) && productFormcontrols.image.errors?.['required']">
+                                 &nbsp; please add an image
+                            </span>
             </div><br>
             <div class="row">
               <label>Details</label>
               <div class="col-md-12">
                 <textarea class="form-control" placeholder="Product Details" id="floatingTextarea" formControlName="details"></textarea>
               </div>
+              <span class="form-control-sm text-danger" for="customFile"
+                                *ngIf="(productFormcontrols.details.touched || submitted) && productFormcontrols.details.errors?.['required']">
+                                 &nbsp; please insert the product details
+                            </span>
             </div>
             <br>
             &nbsp;<button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>&nbsp;
