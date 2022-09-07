@@ -9,20 +9,20 @@ import { AdminServiceService } from '../admin-service.service';
   styleUrls: ['./place.component.css']
 })
 export class PlaceComponent implements OnInit {
-  distarray:any[]=[]
+  distarray:any[]=[];
   submitted = false;
   constructor(private adminservice:AdminServiceService,private fb:FormBuilder,private route:Router) { }
   placeForm=this.fb.group({
     distid:['',Validators.required],
     place:['',Validators.required]
-  })
+  });
   get placeFormControl() {
     return this.placeForm.controls;
   }
 
   ngOnInit(): void {
     this.adminservice.viewdistrict().then((data:any)=>{
-      this.distarray=data
+      this.distarray=data;
     })
   }
   onSubmit(){
@@ -30,20 +30,20 @@ export class PlaceComponent implements OnInit {
     if(this.placeForm.valid){
     var nameexp = /^([A-Za-z ]*)$/;
     if(this.placeForm.value.place?.match(nameexp)){
-      console.log(this.placeForm.value)
+      console.log(this.placeForm.value);
       this.adminservice.placeRegister(this.placeForm.value).then((data:any)=>{
-      console.log(data)
-      alert("Place Inserted")
-      this.placeForm.reset()
-      this.route.navigateByUrl('/admin/viewplace')
+      console.log(data);
+      alert("Place Inserted");
+      this.placeForm.reset();
+      this.route.navigateByUrl('/admin/viewplace');
     })
     }
     else{
-      alert("Please enter a valid place name")
+      alert("Please enter a valid place name");
     }
   }
   else{
-      alert("Please provide a place name")
+      alert("Please provide a place name");
   }
 }
 

@@ -9,65 +9,80 @@
           <h4>Company Register</h4>
         </div>
         <div>
-          <form>
+          <form [formGroup]="companyForm" (ngSubmit)="onSubmit()">
             <div class="row">
               <div class="col-md-12">
-                <input type="text" class="form-control" placeholder="Company Name">
+                <input type="text" class="form-control" placeholder="Company Name" formControlName="company">
+                <small class="text-danger" *ngIf="f.company.errors?.['required'] && (f.company.touched || submitted)">{{'isRequired'}}</small>
               </div>
             </div>
             <br>
             <div class="row">
               <div class="col">
-                <input type="text" class="form-control" placeholder="Email id">
+                <input type="text" class="form-control" placeholder="Email id" formControlName="email" (blur)="companyValidate()">
+                <small class="text-danger" *ngIf="f.email.errors?.['required'] && (f.email.touched || submitted)">{{'isRequired'}}</small>
+                <small class="text-danger" *ngIf="f.email.errors?.['email'] && (f.email.touched || submitted)">{{'isInvalid'}}</small>
               </div>
               <div class="col">
-                <input type="text" class="form-control" placeholder="Contact Number">
-              </div>
+                <input type="text" class="form-control" placeholder="Contact Number" formControlName="contact">
+                <small class="text-danger" *ngIf="f.contact.errors?.['required'] && (f.contact.touched || submitted)">{{'isRequired'}}</small>
+                <small class="text-danger" *ngIf="f.contact.errors?.['minlength'] && (f.contact.touched || submitted)">{{'isInvalid '}}</small>
+                <small class="text-danger" *ngIf="f.contact.errors?.['maxlength'] && (f.contact.touched || submitted)">{{'isInvalid '}}</small>
+                <small class="text-danger" *ngIf="f.contact.errors?.['pattern'] && (f.contact.touched || submitted)">{{'isInvalid '}}</small>
+                </div>
             </div>
             <br>
             <div class="row">
-              <div class="col-md-12">
-                <textarea class="form-control" placeholder="Enter your company address" ></textarea>
+              <div class="col">
+                <textarea class="form-control" placeholder="Enter your company address" formControlName="address"></textarea>
+                <small class="text-danger"  *ngIf="f.address.errors?.['required'] && (f.address.touched || submitted)">{{'isRequired'}}</small>
+              </div>
+              <div class="col">
+                <textarea class="form-control" placeholder="Enter your company web address" formControlName="webaddress"></textarea>
+                <small class="text-danger"  *ngIf="f.webaddress.errors?.['required'] && (f.webaddress.touched || submitted)">{{'isRequired'}}</small>
               </div>
             </div><br>
             <div class="row" >
               <div class="col">
-                <label class="custom-file-label" for="customFile">Logo</label>
-                <input type="file" class="form-control" placeholder="Logo">
+                <small class="custom-file-label" for="customFile">Logo</small>
+                <input type="file" class="form-control" placeholder="Logo" (change)="logoUpload($event)">
               </div>
               <div class="col">
-                <label class="custom-file-label" for="customFile">Proof</label>
-                <input type="file" class="form-control" placeholder="Logo">
-              </div>
-            </div>
-            <br>
-            <div class="row">
-              <div class="col">
-                <label class="custom-file-label" for="customFile">District</label>
-                <select class="form-control">
-                  <option selected>--select--</option>
-                  <option value="saab">Saab</option>
-                  <option value="opel">Opel</option>
-                  <option value="audi">Audi</option>
-                </select>
-              </div>
-              <div class="col">
-                <label class="custom-file-label" for="customFile">Place</label>
-                <select class="form-control">
-                  <option selected>--select--</option>
-                  <option value="saab">Saab</option>
-                  <option value="opel">Opel</option>
-                  <option value="audi">Audi</option>
-                </select>
+                <small class="custom-file-label" for="customFile">Proof</small>
+                <input type="file" class="form-control" placeholder="Logo" (change)="proofUpload($event)">
               </div>
             </div>
             <br>
             <div class="row">
               <div class="col">
-                <input type="password" class="form-control" placeholder="Password">
+                <small class="custom-file-label" for="customFile">District</small>
+                <select class="form-control" formControlName="district"(change)="getPlace()">
+                  <option  value="" selected disabled >--select--</option>
+                  <option *ngFor="let item of distarray" value="{{item.district_id}}">{{item.district_name}}</option>
+                </select>
+                <small class="text-danger"  *ngIf="f.district.errors?.['required'] && (f.district.touched || submitted)">{{'isRequired'}}</small>
               </div>
               <div class="col">
-                <input type="password" class="form-control" placeholder="Confirm Password">
+                <small class="custom-file-label" for="customFile" >Place</small>
+                <select class="form-control" formControlName="place">
+                  <option  value="" selected disabled >--select--</option>
+                  <option *ngFor="let item of placearray" value="{{item.place_id}}">{{item.place_name}}</option>
+                </select>
+                <small class="text-danger" *ngIf="f.place.errors?.['required'] && (f.place.touched || submitted)">{{'isRequired'}}</small>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col">
+                <input type="password" class="form-control" placeholder="Password" formControlName="password">
+                <small class="text-danger" *ngIf="f.password.errors?.['required'] && (f.password.touched || submitted)">{{'isRequired'}}</small>
+                <small class="text-danger" *ngIf="f.password.errors?.['password'] && (f.password.touched || submitted)">{{'isInvalid'}}</small>
+                <small class="text-danger" *ngIf="f.password.errors?.['minlength'] && (f.password.touched || submitted)">{{'tooSmall'}}</small>
+              </div>
+              <div class="col">
+                <input type="password" class="form-control" placeholder="Confirm Password" formControlName="cpassword">
+                <small class="text-danger" *ngIf="f.cpassword.errors?.['required'] && (f.cpassword.touched || submitted)">{{'isRequired'}}</small>
+                <small class="text-danger" *ngIf="!f.cpassword.errors?.['required'] && f.cpassword.errors?.['confirm'] && (f.cpassword.touched || submitted)">{{'notMatch'}}</small>
               </div>
             </div>
             <div class="form-group">
@@ -75,7 +90,7 @@
 
               </div>
             </div>
-            &nbsp;<button type="submit" class="btn btn-primary">Submit</button>&nbsp;
+            &nbsp;<button type="submit" class="btn btn-primary" [disabled]="!this.companyForm.valid">Submit</button>&nbsp;
             <button type="reset" class="btn btn-danger">Cancel</button>
           </form>
           <br>

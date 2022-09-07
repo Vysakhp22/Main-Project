@@ -30,7 +30,7 @@ export class NewUserComponent implements OnInit {
 
 
 
-  public get f() { return this.newUser?.controls }
+  public get f() { return this.newUser?.controls; }
 
 
   ngOnInit(): void {
@@ -57,9 +57,8 @@ export class NewUserComponent implements OnInit {
     if(this.newUser.value.email?.match(emailexp)){
       this.guestService.userValidity({email:this.newUser.value.email}).then((check:any)=>{
         if(check.alert==='Existing'){
-          // alert("Data already exists");
-          // this.newUser.reset();
-          this.data=true;
+          alert("Data already exists");
+          this.newUser.reset();
         }
       });
     }
