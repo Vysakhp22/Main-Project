@@ -33,4 +33,16 @@ export class GuestserviceService {
   companyRegister(data:any){
     return this.http.post("http://localhost/Ex-Convict/Guest/companyregister.php",data).toPromise();
   }
+  shopProof(data:any){
+    return this.http.post("http://localhost/Ex-Convict/Guest/Proofimage.php",data).toPromise();
+  }
+  shopLogo(data:any){
+    return this.http.post("http://localhost/Ex-Convict/Guest/Logoimage.php",data).toPromise();
+  }
+  shopValid(email:any){
+    return this.http.post("http://localhost/Ex-Convict/Guest/shopValid.php",email).toPromise();
+  }
+  shopRegister(val:any){
+    return this.http.post("http://localhost/Ex-Convict/Guest/shopRegister.php",val).toPromise();
+  }
 }

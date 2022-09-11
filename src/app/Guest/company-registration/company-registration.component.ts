@@ -58,7 +58,7 @@ submitted=false;
       if(res?.url){
         this.companyForm.patchValue({proof:res.url});
       }
-    })
+    });
   }
 
   logoUpload(event:any){

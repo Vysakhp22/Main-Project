@@ -8,82 +8,81 @@
         <div class="d-flex p-3 justify-content-center">
           <h4>Shop Register</h4>
         </div>
-        <div style="margin-left: 20%;">
-          <form>
+        <div>
+          <form [formGroup]="shopForm" (ngSubmit)="onSubmit()">
             <div class="row">
-              <label>Name:</label>
-              <div class="col-md-10">
-                <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+              <div class="col-md-12">
+                <input type="text" class="form-control" placeholder="shopname" formControlName="shopname">
+                <small class="text-danger" *ngIf="f.shopname.errors?.['required'] && (f.shopname.touched || submitted)">{{'isRequired'}}</small>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col">
+                <input type="text" class="form-control" placeholder="email" formControlName="email" (blur)="checkEmail()">
+                <small class="text-danger" *ngIf="f.email.errors?.['required'] && ( f.email.touched || submitted )">{{'isRequired'}}</small>
+                <small class="text-danger" *ngIf="f.email.errors?.['email'] && ( f.email.touched || submitted )">{{'isInvalid'}}</small>
+                 </div>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Contact Number" formControlName="contact">
+                <small class="text-danger" *ngIf="f.contact.errors?.['required'] && (f.contact.touched || submitted)">{{'isRequired'}}</small>
+                <small class="text-danger" *ngIf="f.contact.errors?.['minlength'] && (f.contact.touched || submitted)">{{'tooSmall '}}</small>
+                <small class="text-danger" *ngIf="f.contact.errors?.['maxlength'] && (f.contact.touched || submitted)">{{'tooLarge '}}</small>
+                <small class="text-danger" *ngIf="f.contact.errors?.['pattern'] && (f.contact.touched || submitted)">{{'isInvalid'}}</small>
               </div>
             </div>
+            <br>
             <div class="row">
-              <label>Contact:</label>
-              <div class="col-md-10">
-                <input type="number" class="form-control" placeholder="contact" aria-label="contact">
+              <div class="col">
+                <input type="text" class="form-control" placeholder="owner's name" formControlName="owner">
+                <small class="text-danger" *ngIf="f.owner.errors?.['required'] && (f.owner.touched || submitted)">{{'isRequired'}}</small>
+               </div>
+              <div class="col">
+                <textarea class="form-control" placeholder="Enter your shop address" formControlName="address" rows="1"></textarea>
+                <small class="text-danger" *ngIf="f.address.errors?.['required'] && (f.address.touched || submitted)">{{'isRequired'}}</small>
+                  </div>
+            </div><br>
+            <div class="row" >
+              <div class="col">
+                <small class="custom-file-label" for="customFile">Logo</small>
+                <input type="file" class="form-control" placeholder="Logo" (change)="logoUpload($event)">
+              </div>
+              <div class="col">
+                <small class="custom-file-label" for="customFile">Proof</small>
+                <input type="file" class="form-control" placeholder="Logo" (change)="proofUpload($event)">
               </div>
             </div>
+            <br>
             <div class="row">
-              <label>Email:</label>
-              <div class="col-md-10">
-                <input type="email" class="form-control" placeholder="Email id">
-              </div>
-            </div>
-            <div class="row">
-              <label>Address:</label>
-              <div class="col-md-10">
-                <textarea class="form-control" placeholder="Enter your shop address" id="floatingTextarea"></textarea>
-              </div>
-            </div>
-            <div class="row">
-              <label>District:</label>
-              <div class="col-md-10">
-                <select class="form-control">
-                  <option selected>--select--</option>
-                  <option value="saab">Saab</option>
-                  <option value="opel">Opel</option>
-                  <option value="audi">Audi</option>
+              <div class="col">
+                <small class="custom-file-label" for="customFile">District</small>
+                <select class="form-control" formControlName="district" (change)="getPlace()">
+                  <option  value="" selected disabled >--select--</option>
+                  <option *ngFor="let item of distarray" value="{{item.district_id}}">{{item.district_name}}</option>
                 </select>
-              </div>
-            </div>
-            <div class="row">
-              <label>Place:</label>
-              <div class="col-md-10">
-                <select class="form-control">
-                  <option selected>--select--</option>
-                  <option value="saab">Saab</option>
-                  <option value="opel">Opel</option>
-                  <option value="audi">Audi</option>
+                <small class="text-danger" *ngIf="f.district.errors?.['required'] && (f.district.touched || submitted)">{{'isRequired'}}</small>
+                 </div>
+              <div class="col">
+                <small class="custom-file-label" for="customFile" >Place</small>
+                <select class="form-control" formControlName="place">
+                  <option  value="" selected disabled >--select--</option>
+                  <option *ngFor="let item of placearray" value="{{item.place_id}}">{{item.place_name}}</option>
                 </select>
-              </div>
+                <small class="text-danger" *ngIf="f.place.errors?.['required'] && (f.place.touched || submitted)">{{'isRequired'}}</small>
+               </div>
             </div>
+            <br>
             <div class="row">
-              <label>Logo:</label>
-              <div class="col-md-10 ">
-                <input type="file" class="form-control">
+              <div class="col">
+                <input type="password" class="form-control" placeholder="Password" formControlName="password">
+                <small class="text-danger" *ngIf="f.password.errors?.['required'] && (f.password.touched || submitted)">{{'isRequired'}}</small>
+                <small class="text-danger" *ngIf="f.password.errors?.['password'] && (f.password.touched || submitted)">{{'isInvalid'}}</small>
+                <small class="text-danger" *ngIf="f.password.errors?.['minlength'] && (f.password.touched || submitted)">{{'tooSmall'}}</small>
               </div>
-            </div>
-            <div class="row">
-              <label>Proof:</label>
-              <div class="col-md-10 ">
-                <input type="file" class="form-control">
-              </div>
-            </div>
-            <div class="row">
-              <label>Owner name:</label>
-              <div class="col-md-10">
-                <input type="text" class="form-control" placeholder="Owner's name">
-              </div>
-            </div>
-            <div class="row">
-              <label>Password:</label>
-              <div class="col-md-10">
-                <input type="password" class="form-control" placeholder="Password">
-              </div>
-            </div>
-            <div class="row">
-              <label>Confirm Password:</label>
-              <div class="col-md-10">
-                <input type="password" class="form-control" placeholder="re-enter your password">
+              <div class="col">
+                <input type="password" class="form-control" placeholder="Confirm Password" formControlName="cpassword">
+                <small class="text-danger" *ngIf="f.cpassword.errors?.['required'] && (f.cpassword.touched || submitted)">{{'isRequired'}}</small>
+                <small class="text-danger" *ngIf="!f.cpassword.errors?.['required'] && f.cpassword.errors?.['confirm'] && (f.cpassword.touched || submitted)">{{'notMatch'}}</small>
               </div>
             </div>
             <div class="form-group">
@@ -91,7 +90,7 @@
 
               </div>
             </div>
-            &nbsp;<button type="submit" class="btn btn-primary">Submit</button>&nbsp;
+            &nbsp;<button type="submit" class="btn btn-primary" [disabled]="!this.shopForm.valid">Submit</button>&nbsp;
             <button type="reset" class="btn btn-danger">Cancel</button>
           </form>
           <br>
