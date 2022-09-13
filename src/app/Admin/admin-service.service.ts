@@ -54,4 +54,13 @@ export class AdminServiceService {
   viewProduct(){
     return this.client.get("http://localhost/Ex-Convict/Admin/viewproduct.php").toPromise();
   }
+  viewShop(){
+    return this.client.get("http://localhost/Ex-Convict/Admin/viewShop.php").toPromise();
+  }
+  acceptShop(id:any){
+    return this.client.post("http://localhost/Ex-Convict/Admin/shopApprove.php",id).toPromise();
+  }
+  declineShop(id:any){
+    return this.client.post("http://localhost/Ex-Convict/Admin/shopReject.php",id).toPromise();
+  }
 }
