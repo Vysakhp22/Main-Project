@@ -69,4 +69,19 @@ export class AdminServiceService {
   viewRejectedShop(){
     return this.client.get("http://localhost/Ex-Convict/Admin/Rejectedshop.php").toPromise();
   }
+  viewNewCompany(){
+    return this.client.get("http://localhost/Ex-Convict/Admin/viewCompany.php").toPromise();
+  }
+  acceptCompany(id:any){
+    return this.client.post("http://localhost/Ex-Convict/Admin/companyApprove.php",id).toPromise();
+  }
+  declineCompany(id:any){
+    return this.client.post("http://localhost/Ex-Convict/Admin/companyReject.php",id).toPromise();
+  }
+  viewAcceptedCompany(){
+    return this.client.get("http://localhost/Ex-Convict/Admin/ApprovedCompany.php").toPromise();
+  }
+  viewRejectedCompany(){
+    return this.client.get("http://localhost/Ex-Convict/Admin/RejectedCompany.php").toPromise();
+  }
 }

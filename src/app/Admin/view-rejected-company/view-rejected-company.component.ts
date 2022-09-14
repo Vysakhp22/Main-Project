@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminServiceService } from '../admin-service.service';
 
 @Component({
   selector: 'app-view-rejected-company',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewRejectedCompanyComponent implements OnInit {
 
-  constructor() { }
+  carray:any[]=[];
+
+  constructor(private adminService:AdminServiceService) { }
 
   ngOnInit(): void {
+    this.adminService.viewRejectedCompany().then((res:any)=>{
+      this.carray=res;
+    })
   }
 
 }

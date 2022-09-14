@@ -22,6 +22,10 @@ export class ViewNewShopComponent implements OnInit {
     console.log(id);
     this.adminService.acceptShop({id}).then((res:any)=>{
       console.log(res);
+      if(res.alert==='Success'){
+        alert("Accepted");
+        window.location.reload();
+      }
     });
   }
 
@@ -29,6 +33,10 @@ export class ViewNewShopComponent implements OnInit {
     console.log(id);
     this.adminService.declineShop({id}).then((res:any)=>{
       console.log(res);
+      if(res.alert==='Success'){
+        alert("Accepted");
+        window.location.reload();
+      }
     });
   }
 

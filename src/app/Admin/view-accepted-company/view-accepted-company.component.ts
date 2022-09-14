@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminServiceService } from '../admin-service.service';
 
 @Component({
   selector: 'app-view-accepted-company',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewAcceptedCompanyComponent implements OnInit {
 
-  constructor() { }
+  carray:any[]=[];
+
+  constructor(private adminService:AdminServiceService) { }
 
   ngOnInit(): void {
+    this.adminService.viewAcceptedCompany().then((val:any)=>{
+      this.carray=val;
+    });
   }
 
 }
