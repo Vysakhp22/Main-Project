@@ -63,4 +63,10 @@ export class AdminServiceService {
   declineShop(id:any){
     return this.client.post("http://localhost/Ex-Convict/Admin/shopReject.php",id).toPromise();
   }
+  viewAcceptedShop(){
+    return this.client.get("http://localhost/Ex-Convict/Admin/ApprovedShop.php").toPromise();
+  }
+  viewRejectedShop(){
+    return this.client.get("http://localhost/Ex-Convict/Admin/Rejectedshop.php").toPromise();
+  }
 }

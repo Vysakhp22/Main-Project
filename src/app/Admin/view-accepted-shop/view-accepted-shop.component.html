@@ -1,7 +1,7 @@
 <div class="d-flex p-3 justify-content-center">
   <h4>Accepted Shop</h4>
 </div>
-<table class="table">
+<table class="table" style="margin-left: 15%; width: 800px;">
   <thead class="table-active">
     <tr>
       <th scope="col">Sl.No.</th>
@@ -12,14 +12,14 @@
       <th scope="col">Action</th>
     </tr>
   </thead>
-  <tbody *ngFor="let i=index;">
-    <tr>
-      <th scope="row">{{i}}</th>
-      <td scope="row">Mark</td>
-      <td scope="row">Otto</td>
-      <th scope="row">{{i}}</th>
-      <td scope="row">Mark</td>
-      <td scope="row">Otto</td>
+  <tbody>
+    <tr *ngFor="let i=index; let item of shoparray;">
+      <th scope="row">{{i+1}}</th>
+      <td scope="row">{{item.shop_name}}</td>
+      <td scope="row">{{item.shop_contactno}}</td>
+      <td scope="row">{{item.shop_email}}</td>
+      <td scope="row"><img [src]="'http://localhost/Ex-Convict/Guest/'+item.shop_logo" width="50" height="50" alt="" class="img-thumbnail" style="border-radius:50%"></td>
+      <td>&nbsp;&nbsp;<button class="btn btn-outline-danger btn-sm bi bi-x-circle"></button></td>
     </tr>
   </tbody>
 </table>

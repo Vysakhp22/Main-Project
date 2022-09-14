@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminServiceService } from '../admin-service.service';
 
 @Component({
   selector: 'app-view-rejected-shop',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewRejectedShopComponent implements OnInit {
 
-  constructor() { }
+  shopArray:any[]=[];
+
+  constructor(private adminService:AdminServiceService) { }
 
   ngOnInit(): void {
+    this.adminService.viewRejectedShop().then((res:any)=>{
+      this.shopArray=res;
+    });
   }
 
 }
