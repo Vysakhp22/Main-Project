@@ -47,6 +47,16 @@ export class CentraljailRegistrationComponent implements OnInit {
     control.value === this.f?.password.value ? null : { confirm:true}
   }
 
+  isValid(){
+    this.adminService.isJailValid({email:this.jailForm.value?.email}).then((data:any)=>{
+      console.log(data);
+      if(data.alert === 'Existing'){
+        alert("Data already exist");
+        this.jailForm.reset();
+      }
+    });
+  }
+
   onSubmit(){
     this.submitted=true;
     this.jailForm.markAllAsTouched();

@@ -90,4 +90,7 @@ export class AdminServiceService {
   centraljailRegister(data:any){
     return this.client.post("http://localhost/Ex-Convict/Admin/centraljail.php",data).toPromise();
   }
+  isJailValid(id:any){
+    return this.client.post("http://localhost/Ex-Convict/Admin/jailvalid.php",id).toPromise();
+  }
 }

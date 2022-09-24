@@ -22,4 +22,8 @@ export class JailsuperintendentRegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSubmit(){
+    console.log(this.superIntendentForm.value);
+  }
+
 }

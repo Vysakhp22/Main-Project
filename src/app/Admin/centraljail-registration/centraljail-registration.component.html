@@ -12,14 +12,14 @@
           <form [formGroup]="jailForm" (ngSubmit)="onSubmit()">
             <div class="row">
               <div class="col-md-12">
-                <input type="text" class="form-control" placeholder="Centraljail Name" formControlName="jname">
+                <input type="text" class="form-control" placeholder="Central jail Name" formControlName="jname">
                 <small class="text-danger" *ngIf="f.jname.errors?.['required'] && ( f.jname.touched || submitted )">{{'isRequired'}}</small>
                 </div>
             </div>
             <br>
             <div class="row">
               <div class="col">
-                <input type="text" class="form-control" placeholder="Email id" formControlName="email" >
+                <input type="text" class="form-control" placeholder="Email id" formControlName="email" (blur)="isValid()">
                 <small class="text-danger" *ngIf="f.email.errors?.['required'] && ( f.email.touched || submitted )">{{'isRequired'}}</small>
                 <small class="text-danger" *ngIf="f.email.errors?.['email'] && ( f.email.touched || submitted )">{{'isInvalid'}}</small>
                  </div>
