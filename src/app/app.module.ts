@@ -64,6 +64,8 @@ import { ViewNewUserOrdersComponent } from './Centraljail/view-new-user-orders/v
 import { ViewAcceptedUserOrdersComponent } from './Centraljail/view-accepted-user-orders/view-accepted-user-orders.component';
 import { ViewRejectedUserOrdersComponent } from './Centraljail/view-rejected-user-orders/view-rejected-user-orders.component';
 import { SearchCompanyComponent } from './Prisoner/search-company/search-company.component';
+import { CentraljailRegistrationComponent } from './Admin/centraljail-registration/centraljail-registration.component';
+import { JailsuperintendentRegisterComponent } from './Centraljail/jailsuperintendent-register/jailsuperintendent-register.component';
 
 
 
@@ -127,7 +129,9 @@ import { SearchCompanyComponent } from './Prisoner/search-company/search-company
     ViewNewUserOrdersComponent,
     ViewAcceptedUserOrdersComponent,
     ViewRejectedUserOrdersComponent,
-    SearchCompanyComponent
+    SearchCompanyComponent,
+    CentraljailRegistrationComponent,
+    JailsuperintendentRegisterComponent
   ],
   imports: [
     BrowserModule,

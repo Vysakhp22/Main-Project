@@ -2,6 +2,7 @@ import { compileClassMetadata } from '@angular/compiler';
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminnavbarComponent } from './Admin/adminnavbar/adminnavbar.component';
+import { CentraljailRegistrationComponent } from './Admin/centraljail-registration/centraljail-registration.component';
 import { DistrictComponent } from './Admin/district/district.component';
 import { JobdetailsComponent } from './Admin/jobdetails/jobdetails.component';
 import { PlaceComponent } from './Admin/place/place.component';
@@ -22,6 +23,7 @@ import { CentraljailChangePasswordComponent } from './Centraljail/centraljail-ch
 import { CentraljailEditProfileComponent } from './Centraljail/centraljail-edit-profile/centraljail-edit-profile.component';
 import { CentraljailMyprofileComponent } from './Centraljail/centraljail-myprofile/centraljail-myprofile.component';
 import { CentraljailnavbarComponent } from './Centraljail/centraljailnavbar/centraljailnavbar.component';
+import { JailsuperintendentRegisterComponent } from './Centraljail/jailsuperintendent-register/jailsuperintendent-register.component';
 import { PrisonerRegistrationComponent } from './Centraljail/prisoner-registration/prisoner-registration.component';
 import { ProductRateComponent } from './Centraljail/product-rate/product-rate.component';
 import { ViewAcceptedShopOrdersComponent } from './Centraljail/view-accepted-shop-orders/view-accepted-shop-orders.component';
@@ -87,7 +89,8 @@ children:[{path:'district',component:DistrictComponent},
           {path:'product',component:ProductComponent},
           {path:'viewproduct',component:ViewProductComponent},
           {path:'jobdetails',component:JobdetailsComponent},
-          {path:'viewjobdetails',component:ViewJobDetailsComponent}]},
+          {path:'viewjobdetails',component:ViewJobDetailsComponent},
+          {path:'jailregister',component:CentraljailRegistrationComponent}]},
 {path:'prisoner',component:PrisonerNavbarComponent,
 children:[{path:'searchcompany',component:SearchCompanyComponent}]},
 {path:'company',component:CompanyNavbarComponent,
@@ -122,7 +125,8 @@ children:[{path:'prisonerregister',component:PrisonerRegistrationComponent},
           {path:'viewrejectedshoporders',component:ViewRejectedShopOrdersComponent},
           {path:'viewuserorders',component:ViewNewUserOrdersComponent},
           {path:'viewaccepteduserorders',component:ViewAcceptedUserOrdersComponent},
-          {path:'viewrejecteduserorders',component:ViewRejectedUserOrdersComponent}]}
+          {path:'viewrejecteduserorders',component:ViewRejectedUserOrdersComponent},
+          {path:'jailsuperintendent',component:JailsuperintendentRegisterComponent}]}
 ];
 
 @NgModule({

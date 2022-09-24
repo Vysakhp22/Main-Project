@@ -84,4 +84,10 @@ export class AdminServiceService {
   viewRejectedCompany(){
     return this.client.get("http://localhost/Ex-Convict/Admin/RejectedCompany.php").toPromise();
   }
+  getPlace(data:any){
+    return this.client.post("http://localhost/Ex-Convict/Admin/getPlace.php",data).toPromise();
+  }
+  centraljailRegister(data:any){
+    return this.client.post("http://localhost/Ex-Convict/Admin/centraljail.php",data).toPromise();
+  }
 }
