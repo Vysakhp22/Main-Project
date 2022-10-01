@@ -13,15 +13,22 @@
             <div class="row">
               <div class="col-md-12">
                 <input type="text" class="form-control" placeholder="Jailsuperintendent Name" formControlName="name">
+                <small class="text-danger" *ngIf="f.name.errors?.['required'] && ( f.name.touched || submitted )">{{'isRequired'}}</small>
                 </div>
             </div>
             <br>
             <div class="row">
               <div class="col">
                 <input type="text" class="form-control" placeholder="Email id" formControlName="email" >
+                <small class="text-danger" *ngIf="f.email.errors?.['required'] && ( f.email.touched || submitted )">{{'isRequired'}}</small>
+                <small class="text-danger" *ngIf="f.email.errors?.['email'] && ( f.email.touched || submitted )">{{'isInvalid'}}</small>
                  </div>
               <div class="col">
                 <input type="text" class="form-control" placeholder="Contact Number" formControlName="contact">
+                <small class="text-danger" *ngIf="f.contact.errors?.['required'] && ( f.contact.touched || submitted )">{{'isRequired'}}}</small>
+                <small class="text-danger" *ngIf="f.contact.errors?.['minlength'] && ( f.contact.touched || submitted )">{{'isInvalid'}}}</small>
+                <small class="text-danger" *ngIf="f.contact.errors?.['maxlength'] && ( f.contact.touched || submitted )">{{'isInvalid'}}}</small>
+                <small class="text-danger" *ngIf="f.contact.errors?.['pattern'] && ( f.contact.touched || submitted )">{{'isInvalid'}}}</small>
                 </div>
               </div>
             <br>
@@ -37,19 +44,23 @@
                   value="Female" formControlName="gender" name="gender">
                 &nbsp;<label class="form-check-label" for="flexRadioDefault1">
                   Female
-                </label> </div>
+                </label>
+              <small class="text-danger" *ngIf="f.gender.errors?.['required'] && ( f.gender.touched || submitted )">{{'isRequired'}}</small>
+              </div>
               <div class="col">
                 <textarea class="form-control" placeholder="Enter the address" formControlName="address" rows="1"></textarea>
+                <small class="text-danger" *ngIf="f.address.errors?.['required'] && ( f.address.touched || submitted )">{{'isRequired'}}</small>
                  </div>
             </div>
             <div class="row" >
               <div class="col">
                 <small class="custom-file-label" for="customFile">Qualification</small>
                 <input type="text" class="form-control" placeholder="Jailsuperintendent Qualification" formControlName="qualify">
+                <small class="text-danger" *ngIf="f.qualify.errors?.['required'] && ( f.qualify.touched || submitted )">{{'isRequired'}}</small>
               </div>
               <div class="col">
                 <small class="custom-file-label" for="customFile">Photo</small>
-                <input type="file" class="form-control" placeholder="Logo" >
+                <input type="file" class="form-control" placeholder="Logo" (change)="imageUpload($event)">
               </div>
             </div>
 

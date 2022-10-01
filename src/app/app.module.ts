@@ -66,7 +66,8 @@ import { ViewRejectedUserOrdersComponent } from './Centraljail/view-rejected-use
 import { SearchCompanyComponent } from './Prisoner/search-company/search-company.component';
 import { CentraljailRegistrationComponent } from './Admin/centraljail-registration/centraljail-registration.component';
 import { JailsuperintendentRegisterComponent } from './Centraljail/jailsuperintendent-register/jailsuperintendent-register.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
 
 
 @NgModule({
@@ -138,7 +139,9 @@ import { JailsuperintendentRegisterComponent } from './Centraljail/jailsuperinte
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -17,4 +17,10 @@ export class CentraljailServiceService {
   prisonerCheck(mail:any){
     return this.http.post("http://localhost/Ex-Convict/Centraljail/prisonervalid.php",mail).toPromise();
   }
+  superintendentImg(img:any){
+    return this.http.post("http://localhost/Ex-Convict/Centraljail/superintendentImage.php",img).toPromise();
+  }
+  superIntendentRegister(data:any){
+    return this.http.post("http://localhost/Ex-Convict/Centraljail/jailsuperintendentregister.php",data).toPromise()
+  }
 }

@@ -15,7 +15,8 @@ export class ViewNewShopComponent implements OnInit {
   ngOnInit(): void {
     this.adminService.viewShop().then((data:any)=>{
       this.shoparray=data;
-    })
+      console.log(data);
+    });
   }
 
   approveShop(id:any){
@@ -34,7 +35,7 @@ export class ViewNewShopComponent implements OnInit {
     this.adminService.declineShop({id}).then((res:any)=>{
       console.log(res);
       if(res.alert==='Success'){
-        alert("Accepted");
+        alert("Rejected");
         window.location.reload();
       }
     });

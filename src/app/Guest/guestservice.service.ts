@@ -45,4 +45,7 @@ export class GuestserviceService {
   shopRegister(val:any){
     return this.http.post("http://localhost/Ex-Convict/Guest/shopRegister.php",val).toPromise();
   }
+  guestLogin(data:any){
+    return this.http.post("http://localhost/Ex-Convict/Guest/Guestlogin.php",data).toPromise();
+  }
 }

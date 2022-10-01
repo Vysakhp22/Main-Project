@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { CentraljailServiceService } from '../centraljail-service.service';
 
 @Component({
   selector: 'app-jailsuperintendent-register',
@@ -8,7 +9,11 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class JailsuperintendentRegisterComponent implements OnInit {
 
-  constructor(private fb:FormBuilder) { }
+  imgUrl='';
+  submitted=false;
+
+  constructor(private fb:FormBuilder,
+              private centralService:CentraljailServiceService) { }
   superIntendentForm=this.fb.group({
     name:['',Validators.required],
     email:['',[Validators.required,Validators.email]],
@@ -22,8 +27,41 @@ export class JailsuperintendentRegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public get f(){ return this.superIntendentForm?.controls; }
+  imageUpload(event:any){
+    console.log("img");
+    let file = event.target.files?.[0];
+    if(!file){
+      return;
+    }
+    const read = new FileReader();
+    read.readAsDataURL(file);
+    read.onload=()=>{
+      this.imgUrl = read.result as string;
+    }
+    let formData:FormData = new FormData();
+    formData.append('superImg',file);
+    this.centralService.superintendentImg(formData).then((res:any)=>{
+      console.log(res);
+      if(res?.url){
+        this.superIntendentForm.patchValue({image:res.url});
+      }
+    });
+    }
+
   onSubmit(){
+    this.submitted=true;
+    this.superIntendentForm.markAllAsTouched();
+    if(!this.superIntendentForm.valid){
+      return;
+    }
     console.log(this.superIntendentForm.value);
+    this.centralService.superIntendentRegister(this.superIntendentForm.value).then((res:any)=>{
+      console.log(res);
+      if(res.alert==='Success'){
+        alert("Registered Successfully");
+      }
+    });
   }
 
 }
