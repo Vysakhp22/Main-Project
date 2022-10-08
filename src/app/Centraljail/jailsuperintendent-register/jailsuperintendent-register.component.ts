@@ -52,11 +52,12 @@ export class JailsuperintendentRegisterComponent implements OnInit {
   onSubmit(){
     this.submitted=true;
     this.superIntendentForm.markAllAsTouched();
+    let id = { Id:localStorage.getItem('Id'),...this.superIntendentForm.value };
     if(!this.superIntendentForm.valid){
       return;
     }
     console.log(this.superIntendentForm.value);
-    this.centralService.superIntendentRegister(this.superIntendentForm.value).then((res:any)=>{
+    this.centralService.superIntendentRegister(id).then((res:any)=>{
       console.log(res);
       if(res.alert==='Success'){
         alert("Registered Successfully");

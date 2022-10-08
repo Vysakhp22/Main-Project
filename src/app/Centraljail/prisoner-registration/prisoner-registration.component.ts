@@ -64,14 +64,15 @@ export class PrisonerRegistrationComponent implements OnInit {
   }
 
   onSubmit(){
+    let id = { Id:localStorage.getItem('Id'),...this.prisonerForm.value };
     this.submitted=true;
     this.prisonerForm.markAllAsTouched();
     if(!this.prisonerForm.valid){
       return;
     }
     else{
-    console.log(this.prisonerForm.value);
-    this.service.prisonerRegister(this.prisonerForm.value).then(( res:any )=>{
+    console.log(id);
+    this.service.prisonerRegister(id).then(( res:any )=>{
       console.log(res);
       if(res.alert==='Success'){
         alert("Registered Successfully");
