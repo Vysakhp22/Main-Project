@@ -1,20 +1,20 @@
 <div class="wrapper">
   <div class="profile-card js-profile-card">
-    <div class="profile-card__img">
+    <!-- <div class="profile-card__img">
       <img src="../../../assets/images/logo.png" alt="profile card">
-    </div>
+    </div> -->
 
-    <div class="profile-card__cnt js-profile-cnt">
-      <div class="profile-card__name">{{shopname}}</div>
-       <div class="profile-card__txt">angular@gmail.com <!--<strong>Mesopotamia</strong> --></div>
-       <div class="profile-card__txt">9076874747 <!--<strong>Mesopotamia</strong> --></div>
+    <div class="profile-card__cnt js-profile-cnt" style="margin-top:8%;">
+      <div class="profile-card__name">{{userArray[0]?.['user_name']}}</div>
+       <div class="profile-card__txt">{{userArray[0]?.['user_email']}} <!--<strong>Mesopotamia</strong> --></div>
+       <div class="profile-card__txt">{{userArray[0]?.['user_contactno']}}<!--<strong>Mesopotamia</strong> --></div>
       <div class="profile-card-loc">
         <span class="profile-card-loc__icon">
           <i class="bi bi-geo-alt"></i>
         </span>
 
         <span class="profile-card-loc__txt">
-          Kuravilangad, Kottayam
+          {{userArray[0]?.['user_address']}}
         </span>
       </div>
 
@@ -86,8 +86,8 @@
       </div> -->
 
       <div class="profile-card-ctr">
-        <button class="profile-card__button button--blue js-message-btn" routerLink="/user/editprofile">Edit Profile</button>
-        <button class="profile-card__button button--orange" [routerLink]="['/user/changepassword']">Change Passord</button>
+        <button class="profile-card__button button--blue js-message-btn" [routerLink]="['/user/editprofile',userArray[0]?.['user_id']]">Edit Profile</button>
+        <button class="profile-card__button button--orange" [routerLink]="['/user/changepassword',userArray[0]?.['user_id']]">Change Passord</button>
       </div>
     </div>
 
