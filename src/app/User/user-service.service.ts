@@ -14,4 +14,7 @@ export class UserServiceService {
   updateUser(data:any){
     return this.http.post("http://localhost/Ex-Convict/User/updateUser.php",data).toPromise();
   }
+  changePassword(data:any){
+    return this.http.post("http://localhost/Ex-Convict/User/userchangePasswd.php",data).toPromise();
+  }
 }
