@@ -1,20 +1,21 @@
 <div class="wrapper">
   <div class="profile-card js-profile-card">
     <div class="profile-card__img">
-      <img src="../../../assets/images/logo.png" alt="profile card">
+      <img [src]="'http://localhost/Ex-Convict/Guest/'+shopArray[0]?.['shop_logo']" alt="profile card">
+      
     </div>
 
     <div class="profile-card__cnt js-profile-cnt">
-      <div class="profile-card__name">Name</div>
-       <div class="profile-card__txt">angular@gmail.com <!--<strong>Mesopotamia</strong> --></div>
-       <div class="profile-card__txt">9076874747 <!--<strong>Mesopotamia</strong> --></div>
+      <div class="profile-card__name">{{shopArray[0]?.['shop_name']}}</div>
+       <div class="profile-card__txt">{{shopArray[0]?.['shop_email']}} <!--<strong>Mesopotamia</strong> --></div>
+       <div class="profile-card__txt">{{shopArray[0]?.['shop_contactno']}} <!--<strong>Mesopotamia</strong> --></div>
       <div class="profile-card-loc">
         <span class="profile-card-loc__icon">
           <i class="bi bi-geo-alt"></i>
         </span>
 
         <span class="profile-card-loc__txt">
-          Kuravilangad, Kottayam
+          {{shopArray[0]?.['shop_address']}}
         </span>
       </div>
 

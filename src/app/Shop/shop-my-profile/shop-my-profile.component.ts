@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ShopServiceService } from '../shop-service.service';
 
 @Component({
   selector: 'app-shop-my-profile',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShopMyProfileComponent implements OnInit {
 
-  constructor() { }
+  shopArray:any[]=[];
+
+  constructor( private shopService:ShopServiceService ) { }
 
   ngOnInit(): void {
+    this.shopService.getShop( { id:localStorage.getItem('Id') } ).then((data:any) => {
+      this.shopArray=data.data;
+      console.log(this.shopArray);
+    });
   }
 
 }
