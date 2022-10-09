@@ -11,4 +11,7 @@ export class ShopServiceService {
   getShop(id:any){
     return this.http.post("http://localhost/Ex-Convict/Shop/getShop.php",id).toPromise();
   }
+  updateShop(data:any){
+    return this.http.post("http://localhost/Ex-Convict/Shop/updateShop.php",data).toPromise();
+  }
 }

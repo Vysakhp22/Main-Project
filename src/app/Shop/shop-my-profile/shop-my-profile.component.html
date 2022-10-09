@@ -87,7 +87,7 @@
       </div> -->
 
       <div class="profile-card-ctr">
-        <button class="profile-card__button button--blue js-message-btn" routerLink="/user/editprofile">Edit Profile</button>
+        <button class="profile-card__button button--blue js-message-btn" [routerLink]="['/shop/shopeditprofile',shopArray[0]?.['shop_id']]">Edit Profile</button>
         <button class="profile-card__button button--orange" [routerLink]="['/user/changepassword']">Change Passord</button>
       </div>
     </div>

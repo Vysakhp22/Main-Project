@@ -9,29 +9,37 @@
           <h4>Edit Profile</h4>
         </div>
         <div style="margin-left: 20%;">
-          <form>
+          <form [formGroup]="shopeditForm" (ngSubmit)="onSubmit()">
             <div class="row">
               <label>Name:</label>
               <div class="col-md-10">
-                <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+                <input type="hidden" class="form-control" aria-label="First name" formControlName="sid">
+                <input type="text" class="form-control" placeholder="First name" aria-label="First name" formControlName="name">
+                <small class="text-danger" *ngIf="f.name.errors?.['required'] && (f.name.touched || submitted)">{{'isRequired'}}</small>
               </div>
             </div>
             <div class="row">
               <label>Contact:</label>
               <div class="col-md-10">
-                <input type="number" class="form-control" placeholder="contact" aria-label="contact">
+                <input type="text" class="form-control" placeholder="contact" aria-label="contact" formControlName="contact">
+                <small class="text-danger" *ngIf="f.contact.errors?.['required'] && (f.contact.touched || submitted)">{{'isRequired'}}</small>
+                <small class="text-danger" *ngIf="f.contact.errors?.['minlength'] && (f.contact.touched || submitted)">{{'isInvalid'}}</small>
+                <small class="text-danger" *ngIf="f.contact.errors?.['maxlength'] && (f.contact.touched || submitted)">{{'isInvalid'}}</small>
               </div>
             </div>
-            <div class="row">
+            <!-- <div class="row">
               <label>Email:</label>
               <div class="col-md-10">
-                <input type="email" class="form-control" placeholder="Email id">
+                <input type="email" class="form-control" placeholder="Email id" formControlName="email">
+                <small class="text-danger" *ngIf="f.email.errors?.['reqiured'] && (f.email.touched || submitted)">{{'isRequired'}}</small>
+                <small class="text-danger" *ngIf="f.email.errors?.['email'] && (f.email.touched || submitted)">{{'isInvalid'}}</small>
               </div>
-            </div>
+            </div> -->
             <div class="row">
               <label>Address:</label>
               <div class="col-md-10">
-                <textarea class="form-control" placeholder="Enter your shop address" id="floatingTextarea"></textarea>
+                <textarea class="form-control" placeholder="Enter your shop address" id="floatingTextarea" formControlName="address"></textarea>
+                <small class="text-danger" *ngIf="f.address.errors?.['reqiured'] && (f.address.touched || submitted)">{{'isRequired'}}</small>
               </div>
             </div>
             <!-- <div class="row">
@@ -71,7 +79,8 @@
             <div class="row">
               <label>Owner name:</label>
               <div class="col-md-10">
-                <input type="text" class="form-control" placeholder="Owner's name">
+                <input type="text" class="form-control" placeholder="Owner's name" formControlName="owner">
+                <small class="text-danger" *ngIf="f.owner.errors?.['reqiured'] && (f.owner.touched || submitted)">{{'isRequired'}}</small>
               </div>
             </div>
             <!-- <div class="row">
@@ -91,7 +100,7 @@
 
               </div>
             </div>
-            &nbsp;<button type="submit" class="col-md-5 btn btn-primary">Submit</button>&nbsp;
+            &nbsp;<button type="submit" class="col-md-5 btn btn-primary" [disabled]="this.shopeditForm.invalid">Update</button>&nbsp;
             <button type="reset" class="col-md-4 btn btn-danger">Cancel</button>
           </form>
           <br>
