@@ -43,6 +43,8 @@ export class ShopEditProfileComponent implements OnInit {
   }
 
   onSubmit(){
+    this.submitted=true;
+    this.shopeditForm.markAllAsTouched();
     this.shopService.updateShop(this.shopeditForm.value).then((res:any) => {
       if(res.alert === 'Success'){
         alert("Data updated successfully");

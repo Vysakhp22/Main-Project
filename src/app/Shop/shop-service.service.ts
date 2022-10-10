@@ -14,4 +14,7 @@ export class ShopServiceService {
   updateShop(data:any){
     return this.http.post("http://localhost/Ex-Convict/Shop/updateShop.php",data).toPromise();
   }
+  changePassword(data:any){
+    return this.http.post("http://localhost/Ex-Convict/Shop/shopChangePassword.php",data).toPromise();
+  }
 }
