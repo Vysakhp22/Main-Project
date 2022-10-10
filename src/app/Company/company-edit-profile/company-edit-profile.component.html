@@ -9,25 +9,32 @@
           <h4>Edit Profile</h4>
         </div>
         <div>
-          <form>
+          <form [formGroup]="companyeditForm" (ngSubmit)="onSubmit()">
             <div class="row">
+              <label>Company name:</label>
               <div class="col-md-12">
-                <input type="text" class="form-control" placeholder="Company Name">
+                <input type="hidden" class="form-control" placeholder="Company Name" formControlName="cid">
+                <input type="text" class="form-control" placeholder="Company Name" formControlName="cname">
+                <small class="text-danger" *ngIf="f.cname.errors?.['required'] && (f.cname.touched || submitted)">{{'isRequired'}}</small>
               </div>
             </div>
             <br>
             <div class="row">
-              <div class="col">
-                <input type="text" class="form-control" placeholder="Email id">
-              </div>
-              <div class="col">
-                <input type="text" class="form-control" placeholder="Contact Number">
+              <label>Contact no:</label>
+              <div class="col-md-12">
+                <input type="text" class="form-control" placeholder="Contact Number" formControlName="contact">
+                <small class="text-danger" *ngIf="f.contact.errors?.['required'] && (f.contact.touched || submitted)">{{'isRequired'}}</small>
+                <small class="text-danger" *ngIf="f.contact.errors?.['minlength'] && (f.contact.touched || submitted)">{{'isInvalid'}}</small>
+                <small class="text-danger" *ngIf="f.contact.errors?.['maxlength'] && (f.contact.touched || submitted)">{{'isInvalid'}}</small>
+                <small class="text-danger" *ngIf="f.contact.errors?.['pattern'] && (f.contact.touched || submitted)">{{'isInvalid'}}</small>
               </div>
             </div>
             <br>
             <div class="row">
+              <label>Address:</label>
               <div class="col-md-12">
-                <textarea class="form-control" placeholder="Enter your company address" ></textarea>
+                <textarea class="form-control" placeholder="Enter your company address" formControlName="address"></textarea>
+                <small class="text-danger" *ngIf="f.address.errors?.['required'] && (f.address.touched || submitted)">{{'isRequired'}}</small>
               </div>
             </div>
             <!-- <div class="row" >
@@ -71,7 +78,7 @@
               </div>
             </div> -->
 
-            &nbsp;<button type="submit" class="col-md-6 btn btn-primary">Submit</button>&nbsp;
+            &nbsp;<button type="submit" class="col-md-6 btn btn-primary" [disabled]="this.companyeditForm.invalid">Update</button>&nbsp;
             <button type="reset" class="col-md-5 btn btn-danger">Cancel</button>
           </form>
           <br>

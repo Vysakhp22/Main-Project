@@ -39,7 +39,7 @@
               <label>Address:</label>
               <div class="col-md-10">
                 <textarea class="form-control" placeholder="Enter your shop address" id="floatingTextarea" formControlName="address"></textarea>
-                <small class="text-danger" *ngIf="f.address.errors?.['reqiured'] && (f.address.touched || submitted)">{{'isRequired'}}</small>
+                <small class="text-danger" *ngIf="f.address.errors?.['required'] && (f.address.touched || submitted)">{{'isRequired'}}</small>
               </div>
             </div>
             <!-- <div class="row">
@@ -80,7 +80,7 @@
               <label>Owner name:</label>
               <div class="col-md-10">
                 <input type="text" class="form-control" placeholder="Owner's name" formControlName="owner">
-                <small class="text-danger" *ngIf="f.owner.errors?.['reqiured'] && (f.owner.touched || submitted)">{{'isRequired'}}</small>
+                <small class="text-danger" *ngIf="f.owner.errors?.['required'] && (f.owner.touched || submitted)">{{'isRequired'}}</small>
               </div>
             </div>
             <!-- <div class="row">
