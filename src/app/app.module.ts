@@ -68,6 +68,7 @@ import { CentraljailRegistrationComponent } from './Admin/centraljail-registrati
 import { JailsuperintendentRegisterComponent } from './Centraljail/jailsuperintendent-register/jailsuperintendent-register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
+import { ProductionDetailsComponent } from './Centraljail/production-details/production-details.component';
 
 
 @NgModule({
@@ -132,7 +133,8 @@ import {MatButtonModule} from '@angular/material/button';
     ViewRejectedUserOrdersComponent,
     SearchCompanyComponent,
     CentraljailRegistrationComponent,
-    JailsuperintendentRegisterComponent
+    JailsuperintendentRegisterComponent,
+    ProductionDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -26,6 +26,7 @@ import { CentraljailnavbarComponent } from './Centraljail/centraljailnavbar/cent
 import { JailsuperintendentRegisterComponent } from './Centraljail/jailsuperintendent-register/jailsuperintendent-register.component';
 import { PrisonerRegistrationComponent } from './Centraljail/prisoner-registration/prisoner-registration.component';
 import { ProductRateComponent } from './Centraljail/product-rate/product-rate.component';
+import { ProductionDetailsComponent } from './Centraljail/production-details/production-details.component';
 import { ViewAcceptedShopOrdersComponent } from './Centraljail/view-accepted-shop-orders/view-accepted-shop-orders.component';
 import { ViewAcceptedUserOrdersComponent } from './Centraljail/view-accepted-user-orders/view-accepted-user-orders.component';
 import { ViewNewShopOrdersComponent } from './Centraljail/view-new-shop-orders/view-new-shop-orders.component';
@@ -126,7 +127,8 @@ children:[{path:'prisonerregister',component:PrisonerRegistrationComponent},
           {path:'viewuserorders',component:ViewNewUserOrdersComponent},
           {path:'viewaccepteduserorders',component:ViewAcceptedUserOrdersComponent},
           {path:'viewrejecteduserorders',component:ViewRejectedUserOrdersComponent},
-          {path:'jailsuperintendent',component:JailsuperintendentRegisterComponent}]}
+          {path:'jailsuperintendent',component:JailsuperintendentRegisterComponent},
+          {path:'production',component:ProductionDetailsComponent}]}
 ];
 
 @NgModule({

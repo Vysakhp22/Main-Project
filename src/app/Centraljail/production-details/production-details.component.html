@@ -6,13 +6,13 @@
       style="border:.1px solid rgb(228, 113, 184); border-radius: 10px;top: 10px; margin-top: 3%; margin-left: 25%;">
       <div style="margin-top: 3%; margin-left: 0%;">
         <div class="d-flex p-3 justify-content-center">
-          <h4>Product Rate</h4>
+          <h4>Production Details</h4>
         </div>
         <div style="margin-left:10%;">
-          <form [formGroup]="rateForm" (ngSubmit)="onSubmit()">
+          <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
             <div class="row">
-              <label>Product Name</label>
-              <div class="col-md-10">
+              <label><small>Product Name</small> </label>
+              <div class="col-md-12">
                  <select class="form-control" formControlName="pid">
                   <option value="" selected disabled >--select--</option>
                   <option *ngFor="let item of productArray;" value="{{item.product_id}}">{{item.product_name}}</option>
@@ -34,15 +34,26 @@
               </div>
             </div>
             <br> -->
-
             <div class="row">
-              <label>Product Rate:</label>
-              <div class="col-md-10">
-                <input type="Text" class="form-control" placeholder="Product rate" aria-label="Product Name" formControlName="prate">
-                <small class="text-danger" *ngIf="f.prate.errors?.['required'] && (f.prate.touched || submitted)">{{'isRequired'}}</small>
+                <div class="col">
+                    <label><small>Manufacture Date</small></label>
+                  <input type="date" class="form-control" formControlName="mdate">
+                  <small class="text-danger" *ngIf="f.mdate.errors?.['required'] && (f.mdate.touched || submitted)">{{'isRequired'}}</small>
+                </div>
+                <div class="col">
+                    <label><small>Expiry Date</small></label>
+                  <input type="date" class="form-control" formControlName="edate" (blur)="checkDate()">
+                  <small class="text-danger" *ngIf="!this.dateValid">{{'Expiry date must be greater than manufacture date'}}</small>
+                  <small class="text-danger" *ngIf="f.edate.errors?.['required'] && (f.edate.touched || submitted)">{{'isRequired'}}</small>
+                </div>
+                <div class="col">
+                  <label><small>Quantity</small></label>
+                <input type="text" class="form-control" formControlName="qty" placeholder="Qty">
+                <small class="text-danger" *ngIf="f.qty.errors?.['required'] && (f.qty.touched || submitted)">{{'isRequired'}}</small>
               </div>
-            </div><br>
-            &nbsp;<button type="submit" class="btn btn-primary" [disabled]="!this.rateForm.valid">Save</button>&nbsp;
+              </div>
+            <br>
+            &nbsp;<button type="submit" class="btn btn-primary" [disabled]="!this.dateValid || !this.productForm.valid">Save</button>&nbsp;
             <button type="reset" class="btn btn-danger">Cancel</button>
           </form>
           <br>

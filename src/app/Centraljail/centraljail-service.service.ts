@@ -39,4 +39,15 @@ export class CentraljailServiceService {
   changePassword(data: any){
     return this.http.post("http://localhost/Ex-Convict/Centraljail/changepasswordJail.php",data).toPromise();
   }
+
+  viewProduct(){
+    return this.http.get("http://localhost/Ex-Convict/Centraljail/viewproduct.php").toPromise()
+  }
+  addproductRate(data: any){
+    return this.http.post("http://localhost/Ex-Convict/Centraljail/productRate.php",data).toPromise();
+  }
+
+  addProductiondetails(data: any){
+    return this.http.post("http://localhost/Ex-Convict/Centraljail/productiondetails.php",data).toPromise();
+  }
 }
