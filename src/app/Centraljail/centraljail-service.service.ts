@@ -35,7 +35,7 @@ export class CentraljailServiceService {
   updateJail(data: any){
     return this.http.post("http://localhost/Ex-Convict/Centraljail/upadateJail.php",data).toPromise();
   }
-  
+
   changePassword(data: any){
     return this.http.post("http://localhost/Ex-Convict/Centraljail/changepasswordJail.php",data).toPromise();
   }
@@ -43,11 +43,20 @@ export class CentraljailServiceService {
   viewProduct(){
     return this.http.get("http://localhost/Ex-Convict/Centraljail/viewproduct.php").toPromise()
   }
+
   addproductRate(data: any){
     return this.http.post("http://localhost/Ex-Convict/Centraljail/productRate.php",data).toPromise();
   }
 
   addProductiondetails(data: any){
     return this.http.post("http://localhost/Ex-Convict/Centraljail/productiondetails.php",data).toPromise();
+  }
+
+  addStock(data: any){
+    return this.http.post("http://localhost/Ex-Convict/Centraljail/productstock.php",data).toPromise();
+  }
+
+  getStock(data: any){
+    return this.http.post("http://localhost/Ex-Convict/Centraljail/getStockdetails.php",data).toPromise();
   }
 }

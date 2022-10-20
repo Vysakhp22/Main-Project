@@ -1,0 +1,56 @@
+<html>
+
+  <body>
+    <div class="row">
+      <div class="col-md-6"
+        style="border:.1px solid rgb(228, 113, 184); border-radius: 10px;top: 10px; margin-top: 3%; margin-left: 25%;">
+        <div style="margin-top: 3%; margin-left: 0%;">
+          <div class="d-flex p-3 justify-content-center">
+            <h4>Product Stock</h4>
+          </div>
+          <div style="margin-left:10%;">
+            <form [formGroup]="stockForm" (ngSubmit)="onSubmit()">
+              <div class="row">
+                <label>Product Name</label>
+                <div class="col-md-10">
+                   <select class="form-control" formControlName="pid" (change)="onChange()">
+                    <option value="" selected disabled>--select--</option>
+                    <option *ngFor="let item of productArray;" value="{{item.product_id}}">{{item.product_name}}</option>
+                  </select>
+                  <small class="text-danger" *ngIf="f.pid.errors?.['required'] && (f.pid.touched || submitted)">{{'isRequired'}}</small>
+                </div>
+              </div>
+              <!-- <div class="row">
+                <label>Photo:</label>
+                <div class="col-md-12">
+                  <input type="file" class="form-control">
+                </div>
+              </div> -->
+              <br>
+              <!-- <div class="row">
+                <label>Product Details</label>
+                <div class="col-md-10">
+                  <textarea class="form-control" placeholder="Product Details" id="floatingTextarea" readonly></textarea>
+                </div>
+              </div>
+              <br> -->
+
+              <div class="row">
+                <label>Stock Quantity:</label>
+                <div class="col-md-10">
+                  <input type="Text" class="form-control" placeholder="Product Stock Quantity" aria-label="Product Name" formControlName="stock">
+                  <small class="text-danger" *ngIf="f.stock.errors?.['required'] && (f.stock.touched || submitted)">{{'isRequired'}}</small>
+                </div>
+              </div><br>
+              &nbsp;<button type="submit" class="btn btn-primary" >Save</button>&nbsp;
+              <button type="reset" class="btn btn-danger">Cancel</button>
+            </form>
+            <br>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  </html>
