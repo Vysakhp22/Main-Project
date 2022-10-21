@@ -34,8 +34,10 @@ import { ViewNewShopOrdersComponent } from './Centraljail/view-new-shop-orders/v
 import { ViewNewUserOrdersComponent } from './Centraljail/view-new-user-orders/view-new-user-orders.component';
 import { ViewPrisonerComponent } from './Centraljail/view-prisoner/view-prisoner.component';
 import { ViewProductRatesComponent } from './Centraljail/view-product-rates/view-product-rates.component';
+import { ViewProductionComponent } from './Centraljail/view-production/view-production.component';
 import { ViewRejectedShopOrdersComponent } from './Centraljail/view-rejected-shop-orders/view-rejected-shop-orders.component';
 import { ViewRejectedUserOrdersComponent } from './Centraljail/view-rejected-user-orders/view-rejected-user-orders.component';
+import { ViewStockDetailsComponent } from './Centraljail/view-stock-details/view-stock-details.component';
 import { CompanyChangePasswordComponent } from './Company/company-change-password/company-change-password.component';
 import { CompanyEditProfileComponent } from './Company/company-edit-profile/company-edit-profile.component';
 import { CompanyMyProfileComponent } from './Company/company-my-profile/company-my-profile.component';
@@ -130,7 +132,9 @@ children:[{path:'prisonerregister',component:PrisonerRegistrationComponent},
           {path:'viewrejecteduserorders',component:ViewRejectedUserOrdersComponent},
           {path:'jailsuperintendent',component:JailsuperintendentRegisterComponent},
           {path:'production',component:ProductionDetailsComponent},
-          {path:'productstock', component:ProductStockComponent}]}
+          {path:'productstock', component:ProductStockComponent},
+          {path:'viewproductiondetails', component:ViewProductionComponent},
+          {path:'viewStock', component:ViewStockDetailsComponent}]}
 ];
 
 @NgModule({

@@ -70,6 +70,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import { ProductionDetailsComponent } from './Centraljail/production-details/production-details.component';
 import { ProductStockComponent } from './Centraljail/product-stock/product-stock.component';
+import { ViewProductionComponent } from './Centraljail/view-production/view-production.component';
+import { ViewStockDetailsComponent } from './Centraljail/view-stock-details/view-stock-details.component';
 
 
 @NgModule({
@@ -136,7 +138,9 @@ import { ProductStockComponent } from './Centraljail/product-stock/product-stock
     CentraljailRegistrationComponent,
     JailsuperintendentRegisterComponent,
     ProductionDetailsComponent,
-    ProductStockComponent
+    ProductStockComponent,
+    ViewProductionComponent,
+    ViewStockDetailsComponent
   ],
   imports: [
     BrowserModule,

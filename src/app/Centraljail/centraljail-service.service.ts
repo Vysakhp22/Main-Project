@@ -63,4 +63,12 @@ export class CentraljailServiceService {
   viewRates(){
     return this.http.get("http://localhost/Ex-Convict/Centraljail/viewProductrates.php").toPromise();
   }
+
+  viewProductiondetails(){
+    return this.http.get("http://localhost/Ex-Convict/Centraljail/viewProduction.php").toPromise();
+  }
+
+  viewStock(){
+    return this.http.get("http://localhost/Ex-Convict/Centraljail/viewStock.php").toPromise();
+  }
 }
