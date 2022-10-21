@@ -59,4 +59,8 @@ export class CentraljailServiceService {
   getStock(data: any){
     return this.http.post("http://localhost/Ex-Convict/Centraljail/getStockdetails.php",data).toPromise();
   }
+
+  viewRates(){
+    return this.http.get("http://localhost/Ex-Convict/Centraljail/viewProductrates.php").toPromise();
+  }
 }

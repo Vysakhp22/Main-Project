@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CentraljailServiceService } from '../centraljail-service.service';
 
 @Component({
   selector: 'app-view-product-rates',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewProductRatesComponent implements OnInit {
 
-  constructor() { }
+  rateArray: any[]=[];
+
+  constructor( private Jservice: CentraljailServiceService) { }
 
   ngOnInit(): void {
+    this.Jservice.viewRates().then((data: any) => {
+      this.rateArray=data;
+      console.log(this.rateArray);
+    });
   }
 
 }
