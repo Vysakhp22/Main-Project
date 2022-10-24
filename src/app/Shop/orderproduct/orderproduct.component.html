@@ -1,0 +1,70 @@
+<html>
+
+<body>
+  <div class="row">
+    <div class="col-md-6"
+      style="border:.1px solid rgb(228, 113, 184); border-radius: 10px;top: 10px; margin-top: 3%; margin-left: 25%;">
+      <div style="margin-top: 3%; margin-left: 0%;">
+        <div class="d-flex p-3 justify-content-center">
+          <h4>Order Product</h4>
+        </div>
+        <div style="margin-left: 20%;">
+          <form [formGroup]="orderForm">
+            <div style="margin-left: -22%;">
+              <div class="row">
+                <label class="control-label col-12" for="society">Seller:</label>
+                <div class="col-12">
+                    <input type="text" class="form-control" formControlName="cname" readonly/>
+                </div>
+            </div>
+            <br>
+              <div class="row">
+                  <label class="control-label col-12" for="society"> Product Name:</label>
+                  <div class="col-12">
+                      <input type="text" class="form-control" formControlName="productname" readonly/>
+                  </div>
+              </div>
+
+              <br>
+              <div class="row">
+                  <label class="control-label col-sm-8" for="society">Product Rate:</label>
+                  <div class="col-12">
+                      <input type="text" class="form-control" formControlName="productrate" readonly/>
+
+                  </div>
+              </div>
+              <br>
+              <div class="row">
+                  <label class="control-label col-12" for="society">Quantity:</label>
+                  <div class="col-12">
+                      <input type="number" class="form-control" formControlName="quantity" placeholder="Enter the number of items"/>
+                  </div>
+              </div>
+
+              <br>
+              <div class="row">
+                  <label class="control-label col-12" for="society">Total Amount:</label>
+                  <div class="col-12">
+                      <input type="number" class="form-control" formControlName="total"  readonly/>
+                  </div>
+              </div>
+
+              <br>
+              <div class="row">
+                  <div class="col-sm-6">
+                    <button  mat-raised-button color="accent"  style="width: 100%; margin-left: 40%;"><i class="bi bi-check2-square"></i> Order Now</button>
+                  </div>
+              </div>
+
+              <br>
+          </div>
+
+          </form>
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

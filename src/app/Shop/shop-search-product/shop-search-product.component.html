@@ -1,13 +1,54 @@
-  <form>
-    <div class="row">
-      <div class="col-md-10">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search Product" aria-label="Search">
-      </div>
-      <div class="col" style="margin-left:-2%;">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"> <i class="bi bi-search"></i></button>
+<html>
+<body>
+  <div class="container" style="width:95%;margin-left:2%;margin-bottom: 5%; margin-top: 8%;">
+    <div class="row" style="width:100% ;">
+      <div class="col-md-12">
+        <form [formGroup]="searchForm">
+          <div class="row">
+            <div class="col-md-3">
+              <small class="text-dark"> District:</small>
+              <select  class="form-control" id="exampleFormControlSelect1" formControlName="distid" (change)="onDistrict()">
+                <option  value="" selected disabled >--select--</option>
+                <option *ngFor="let dist of distArray" value="{{dist.district_id}}">{{dist.district_name}}</option>
+              </select>
+              <small class="text-danger" *ngIf="submitted === false">{{'isRequired'}}</small>
+            </div>
+            <div class="col-md-4">
+              <small class="text-dark">Centraljail:</small>
+              <select  class="form-control" id="exampleFormControlSelect1" formControlName="cid" (change)="onJail()">
+                <option  value="" selected disabled >--select--</option>
+                <option *ngFor="let jail of jailArray" value="{{jail.centraljail_id}}">{{jail.centraljail_name}}</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <small class="text-dark">Product:</small>
+              <select  class="form-control" id="exampleFormControlSelect1" formControlName="product" (change)="onProductSelect()">
+                <option  value="" selected disabled >--select--</option>
+                <option *ngFor="let item of productSel" value="{{item.product_id}}">{{item.product_name}}</option>
+              </select>
+            </div>
+
+          </div>
+        </form>
+        <br>
+        <div class="row" style="margin-left: 1px;">
+          <div class="col-md-4 p-1" *ngFor="let row of productArray">
+            <div class="card">
+              <img [src]="'http://localhost/Ex-Convict/Admin/'+row.product_photo" class="card-img-top" alt="...">
+              <div class="card-body" style="margin-left: 25%;">
+                <h4 class="card-title">{{row.product_name}}</h4>
+                 <h6 class="card-title"> Rs. {{row.productrate_rate}}.00/-</h6>
+                <p class="card-text">{{row.product_description}}</p>
+                <p class="card-text">Seller:{{row.centraljail_name}}</p>
+                <button type="button" mat-raised-button color="accent" (click)="onOrder(row.productstock_id)">Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
       </div>
     </div>
-  </form>
+  </div>
+</body>
 
-
-
+</html>

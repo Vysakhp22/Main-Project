@@ -55,6 +55,7 @@ import { NewUserComponent } from './Guest/new-user/new-user.component';
 import { ShopRegistrationComponent } from './Guest/shop-registration/shop-registration.component';
 import { PrisonerNavbarComponent } from './Prisoner/prisoner-navbar/prisoner-navbar.component';
 import { SearchCompanyComponent } from './Prisoner/search-company/search-company.component';
+import { OrderproductComponent } from './Shop/orderproduct/orderproduct.component';
 import { ShopChangePasswordComponent } from './Shop/shop-change-password/shop-change-password.component';
 import { ShopEditProfileComponent } from './Shop/shop-edit-profile/shop-edit-profile.component';
 import { ShopMyProfileComponent } from './Shop/shop-my-profile/shop-my-profile.component';
@@ -110,7 +111,8 @@ children:[{path:'companymyprofile',component:CompanyMyProfileComponent},
 children:[{path:'shopmyprofile',component:ShopMyProfileComponent},
           {path:'shopchangepassword/:id',component:ShopChangePasswordComponent},
           {path:'shopeditprofile/:id',component:ShopEditProfileComponent},
-          {path:'shopsearchproduct',component:ShopSearchProductComponent}]},
+          {path:'shopsearchproduct',component:ShopSearchProductComponent},
+          {path:'orderProduct/:id',component:OrderproductComponent}]},
 {path:'user',component:UserNavbarComponent,
 children:[{path:'changepassword/:id',component:UserChangePasswordComponent},
           {path:'usermyprofile',component:UserMyProfileComponent},

@@ -72,6 +72,7 @@ import { ProductionDetailsComponent } from './Centraljail/production-details/pro
 import { ProductStockComponent } from './Centraljail/product-stock/product-stock.component';
 import { ViewProductionComponent } from './Centraljail/view-production/view-production.component';
 import { ViewStockDetailsComponent } from './Centraljail/view-stock-details/view-stock-details.component';
+import { OrderproductComponent } from './Shop/orderproduct/orderproduct.component';
 
 
 @NgModule({
@@ -140,7 +141,8 @@ import { ViewStockDetailsComponent } from './Centraljail/view-stock-details/view
     ProductionDetailsComponent,
     ProductStockComponent,
     ViewProductionComponent,
-    ViewStockDetailsComponent
+    ViewStockDetailsComponent,
+    OrderproductComponent
   ],
   imports: [
     BrowserModule,
