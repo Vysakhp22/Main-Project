@@ -93,4 +93,16 @@ export class AdminServiceService {
   isJailValid(id:any){
     return this.client.post("http://localhost/Ex-Convict/Admin/jailvalid.php",id).toPromise();
   }
+  jobCategory(data: any){
+    return this.client.post("http://localhost/Ex-Convict/Admin/jobCategory.php",data).toPromise();
+  }
+  viewJobcategory(){
+    return this.client.get("http://localhost/Ex-Convict/Admin/viewJobcategory.php").toPromise();
+  }
+  addJob(data: any){
+    return this.client.post("http://localhost/Ex-Convict/Admin/jobDetails.php",data).toPromise();
+  }
+  viewJobDetails(){
+    return this.client.get("http://localhost/Ex-Convict/Admin/viewJobdetails.php").toPromise();
+  }
 }

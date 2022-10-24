@@ -9,23 +9,22 @@
           <h4>Job details</h4>
         </div>
         <div>
-          <form>
+          <form [formGroup]="jdetailsForm" (ngSubmit)="onSubmit()">
             <div class="row">
               <div class="col-md-12">
-                <label class="form-control-sm text-danger" for="customFile">Category</label>
-                <select class="form-control">
-                  <option selected>--select--</option>
-                  <option value="saab">Saab</option>
-                  <option value="opel">Opel</option>
-                  <option value="audi">Audi</option>
+                <label class="form-control-sm text-secondary" for="customFile">Category</label>
+                <select  class="form-control" id="exampleFormControlSelect1" formControlName="catid">
+                  <option  value="" selected disabled >--select--</option>
+                  <option *ngFor="let cat of catArry" value="{{cat.jobcategory_id}}">{{cat.jobcategory_name}}</option>
                 </select>
+                <small class="text-danger" *ngIf="f.catid.errors?.['required'] && (f.catid.touched || submitted)">{{'isRequired'}}</small>
               </div>
             </div>
             <br>
             <div class="row">
               <div class="col">
-
-                <input type="text" class="form-control" placeholder="Name">
+                <input type="text" class="form-control" placeholder="Name" formControlName="jname">
+                <small class="text-danger" *ngIf="f.jname.errors?.['required'] && (f.jname.touched || submitted)">{{'isRequired'}}</small>
               </div>
               <!-- <div class="col">
                 <input type="text" class="form-control" placeholder="Contact Number">
@@ -34,51 +33,12 @@
             <br>
             <div class="row">
               <div class="col-md-12">
-                <textarea class="form-control" placeholder="Job Details" ></textarea>
+                <textarea class="form-control" placeholder="Job Details" formControlName="jdesc"></textarea>
+                <small class="text-danger" *ngIf="f.jdesc.errors?.['required'] && (f.jdesc.touched || submitted)">{{'isRequired'}}</small>
               </div>
             </div>
-            <!-- <div class="row" >
-              <div class="col">
-                <label class="custom-file-label" for="customFile">Logo</label>
-                <input type="file" class="form-control" placeholder="Logo">
-              </div>
-              <div class="col">
-                <label class="custom-file-label" for="customFile">Proof</label>
-                <input type="file" class="form-control" placeholder="Logo">
-              </div>
-            </div> -->
             <br>
-            <!-- <div class="row">
-              <div class="col">
-                <label class="custom-file-label" for="customFile">District</label>
-                <select class="form-control">
-                  <option selected>--select--</option>
-                  <option value="saab">Saab</option>
-                  <option value="opel">Opel</option>
-                  <option value="audi">Audi</option>
-                </select>
-              </div>
-              <div class="col">
-                <label class="custom-file-label" for="customFile">Place</label>
-                <select class="form-control">
-                  <option selected>--select--</option>
-                  <option value="saab">Saab</option>
-                  <option value="opel">Opel</option>
-                  <option value="audi">Audi</option>
-                </select>
-              </div>
-            </div> -->
-
-            <!-- <div class="row">
-              <div class="col">
-                <input type="password" class="form-control" placeholder="Password">
-              </div>
-              <div class="col">
-                <input type="password" class="form-control" placeholder="Confirm Password">
-              </div>
-            </div> -->
-
-            &nbsp;<button type="submit" class="col-md-6 btn btn-primary">Save</button>&nbsp;
+            &nbsp;<button type="submit" class="col-md-5 btn btn-primary" [disabled]="this.jdetailsForm.invalid">Save</button>&nbsp;
             <button type="reset" class="col-md-5 btn btn-danger">Cancel</button>
           </form>
           <br>
