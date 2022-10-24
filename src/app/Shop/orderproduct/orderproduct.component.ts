@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ShopServiceService } from '../shop-service.service';
 
@@ -11,6 +11,7 @@ import { ShopServiceService } from '../shop-service.service';
 export class OrderproductComponent implements OnInit {
 
   orderForm!: FormGroup;
+  stockId:any;
 
   constructor( private fb: FormBuilder,
                private Sservice: ShopServiceService,
@@ -23,10 +24,11 @@ export class OrderproductComponent implements OnInit {
       cname:[''],
       productname:[''],
       productrate:[''],
-      quantity:[''],
+      quantity:['',Validators.required],
       total:[''],
     });
     this.Sservice.order({id: this.route.snapshot.params['id']}).then((data: any) => {
+      this.stockId=data.data[0].productstock_id;
       this.orderForm.patchValue({
         cname:data.data[0].centraljail_name,
         productname:data.data[0].product_name,
@@ -39,6 +41,12 @@ export class OrderproductComponent implements OnInit {
       this.orderForm.patchValue({
         total: Number(quantity) * Number(this.orderForm.value.productrate)
       }, {emitEvent: false});
+    });
+  }
+
+  onOrdernow(){
+    this.Sservice.orderNow({id: localStorage.getItem('Id'), stkId: this.stockId}).then((res: any) => {
+      console.log(res);
     });
   }
 

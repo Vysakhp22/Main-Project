@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminnavbarComponent } from './Admin/adminnavbar/adminnavbar.component';
 import { CentraljailRegistrationComponent } from './Admin/centraljail-registration/centraljail-registration.component';
 import { DistrictComponent } from './Admin/district/district.component';
+import { JobCategoryComponent } from './Admin/job-category/job-category.component';
 import { JobdetailsComponent } from './Admin/jobdetails/jobdetails.component';
 import { PlaceComponent } from './Admin/place/place.component';
 import { ProductCategoryComponent } from './Admin/product-category/product-category.component';
@@ -95,7 +96,8 @@ children:[{path:'district',component:DistrictComponent},
           {path:'viewproduct',component:ViewProductComponent},
           {path:'jobdetails',component:JobdetailsComponent},
           {path:'viewjobdetails',component:ViewJobDetailsComponent},
-          {path:'jailregister',component:CentraljailRegistrationComponent}]},
+          {path:'jailregister',component:CentraljailRegistrationComponent},
+          {path:'jobcategory', component:JobCategoryComponent}]},
 {path:'prisoner',component:PrisonerNavbarComponent,
 children:[{path:'searchcompany',component:SearchCompanyComponent}]},
 {path:'company',component:CompanyNavbarComponent,

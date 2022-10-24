@@ -48,4 +48,8 @@ export class ShopServiceService {
     return this.http.post("http://localhost/Ex-Convict/Shop/Order.php",id).toPromise();
   }
 
+  orderNow(id: any){
+    return this.http.post("http://localhost/Ex-Convict/Shop/Ordernow.php",id).toPromise();
+  }
+
 }
