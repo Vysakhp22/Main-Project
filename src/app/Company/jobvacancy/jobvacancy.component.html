@@ -9,77 +9,35 @@
           <h4>Job Vacancy</h4>
         </div>
         <div>
-          <form>
+          <form [formGroup]="jobvacForm" (ngSubmit)="onSubmit()">
             <div class="row">
               <div class="col-md-12">
                 <label class="form-control-sm text-secondary" for="customFile">Details</label>
-                <select class="form-control">
-                  <option selected>--select--</option>
-                  <option value="saab">Saab</option>
-                  <option value="opel">Opel</option>
-                  <option value="audi">Audi</option>
+                <select  class="form-control" id="exampleFormControlSelect1" formControlName="detid" (change)="onSelect()">
+                  <option  value="" selected disabled >--select--</option>
+                  <option *ngFor="let det of detArr" value="{{det.jobdet_id}}">{{det.jobdetname}}</option>
                 </select>
+                <small class="text-danger" *ngIf="f.detid.errors?.['required'] && (f.detid.touched || submitted)">{{'isRequired'}}</small>
               </div>
             </div>
 
             <div class="row">
               <div class="col">
                 <label class="form-control-sm text-secondary" for="customFile">Vacancy</label>
-                <input type="text" class="form-control" placeholder="Number of vacancy">
+                <input type="text" class="form-control" placeholder="Number of vacancy" formControlName="jobvac">
+                <small class="text-danger" *ngIf="f.jobvac.errors?.['required'] && (f.jobvac.touched || submitted)">{{'isRequired'}}</small>
+                <small class="text-danger" *ngIf="f.jobvac.errors?.['pattern'] && (f.jobvac.touched || submitted)">{{'mustbeNumber'}}</small>
+
               </div>
               <div class="col">
                 <label class="form-control-sm text-secondary" for="customFile">Last date</label>
-                <input type="date" class="form-control">
+                <input type="date" class="form-control" formControlName="ldate" (change)="dateCheck()">
+                <small class="text-danger" *ngIf="f.ldate.errors?.['required'] && (f.ldate.touched || submitted)">{{'isRequired'}}</small>
+                <small class="text-danger" *ngIf="!this.date">{{'isInvalid'}}</small>
               </div>
-            </div>
+            </div><br>
 
-            <!-- <div class="row">
-              <div class="col-md-12">
-                <textarea class="form-control" placeholder="Job Details" ></textarea>
-              </div>
-            </div> -->
-            <!-- <div class="row" >
-              <div class="col">
-                <label class="custom-file-label" for="customFile">Logo</label>
-                <input type="file" class="form-control" placeholder="Logo">
-              </div>
-              <div class="col">
-                <label class="custom-file-label" for="customFile">Proof</label>
-                <input type="file" class="form-control" placeholder="Logo">
-              </div>
-            </div> -->
-            <br>
-            <!-- <div class="row">
-              <div class="col">
-                <label class="custom-file-label" for="customFile">District</label>
-                <select class="form-control">
-                  <option selected>--select--</option>
-                  <option value="saab">Saab</option>
-                  <option value="opel">Opel</option>
-                  <option value="audi">Audi</option>
-                </select>
-              </div>
-              <div class="col">
-                <label class="custom-file-label" for="customFile">Place</label>
-                <select class="form-control">
-                  <option selected>--select--</option>
-                  <option value="saab">Saab</option>
-                  <option value="opel">Opel</option>
-                  <option value="audi">Audi</option>
-                </select>
-              </div>
-            </div> -->
-
-            <!-- <div class="row">
-              <div class="col">
-                <input type="password" class="form-control" placeholder="Password">
-              </div>
-              <div class="col">
-                <input type="password" class="form-control" placeholder="Confirm Password">
-              </div>
-            </div> -->
-
-            &nbsp;<button type="submit" class="col-md-6 btn btn-primary">Save</button>&nbsp;
+            &nbsp;<button type="submit" class="col-md-6 btn btn-primary" [disabled]="this.jobvacForm.invalid || !this.date">Save</button>&nbsp;
             <button type="reset" class="col-md-5 btn btn-danger">Cancel</button>
           </form>
           <br>

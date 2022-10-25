@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CompanyServiceService } from '../company-service.service';
 
 @Component({
   selector: 'app-view-job-vacancy',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewJobVacancyComponent implements OnInit {
 
-  constructor() { }
+  vacArray: any[]=[];
+
+  constructor( private Cservice: CompanyServiceService,
+                ) { }
 
   ngOnInit(): void {
+    this.Cservice.viewVacancy({id: localStorage.getItem('Id')}).then((res:any) => {
+      this.vacArray=res.data;
+      console.log(res.data)
+    });
   }
 
 }

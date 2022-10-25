@@ -1,23 +1,23 @@
-<div class="d-flex p-3 justify-content-center">
+<div class="d-flex p-3 justify-content-center" style="margin-top: 5%;">
   <h4>View Job Vacancy</h4>
 </div>
-<table class="table">
+<table class="table" style="margin-left: 15%; width: 800px;">
   <thead class="table-active">
     <tr>
       <th scope="col">Sl.No.</th>
       <th scope="col">Details</th>
       <th scope="col">No. of Vacancy</th>
-      <th scope="col">Date</th>
+      <th scope="col">Last Date</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
-  <tbody *ngFor="let i=index;">
-    <tr>
-      <th scope="row">{{i}}</th>
-      <td scope="row">Mark</td>
-      <td scope="row">Otto</td>
-      <th scope="row">{{i}}</th>
-      <td scope="row">Otto</td>
+  <tbody>
+    <tr *ngFor="let item of vacArray;index as i;">
+      <th scope="row">{{i+1}}</th>
+      <td>{{item.jobdetname}}</td>
+      <td>{{item.jobvac_nov}}</td>
+      <td>{{item.jobvac_lastdate}}</td>
+      <td><button class="btn btn-outline-warning btn-sm bi bi-pen"></button> &nbsp;</td>
     </tr>
   </tbody>
 </table>
