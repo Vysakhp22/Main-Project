@@ -71,4 +71,32 @@ export class CentraljailServiceService {
   viewStock(){
     return this.http.get("http://localhost/Ex-Convict/Centraljail/viewStock.php").toPromise();
   }
+
+  getDistrict(){
+    return this.http.get("http://localhost/Ex-Convict/Centraljail/getdistrict.php").toPromise();
+  }
+
+  getPlace(id: any){
+    return this.http.post("http://localhost/Ex-Convict/Centraljail/getplace.php",id).toPromise();
+  }
+
+  proofUpload(data: any){
+    return this.http.post("http://localhost/Ex-Convict/Centraljail/Proof.php",data).toPromise()
+  }
+
+  ImageUpload(data: any){
+    return this.http.post("http://localhost/Ex-Convict/Centraljail/Imageupload.php",data).toPromise()
+  }
+
+  jobSeekerRegister(data: any){
+    return this.http.post("http://localhost/Ex-Convict/Centraljail/Jobseekerregister.php", data).toPromise();
+  }
+
+  getPrisoner(id: any){
+    return this.http.post("http://localhost/Ex-Convict/Centraljail/getprisonername.php",id).toPromise();
+  }
+
+  jobSeekerValid(id: any){
+    return this.http.post("http://localhost/Ex-Convict/Centraljail/jobSeekervalid.php", id).toPromise();
+  }
 }

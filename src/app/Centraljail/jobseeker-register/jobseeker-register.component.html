@@ -1,1 +1,90 @@
-<p>jobseeker-register works!</p>
+<html>
+
+<body>
+  <div class="row">
+    <div class="col-md-6"
+      style="border:.1px solid rgb(228, 113, 184); border-radius: 10px;top: 10px; margin-top: 3%; margin-left: 25%;">
+      <div style="margin-top: 3%; margin-left: 0%;">
+        <div class="d-flex p-3 justify-content-center">
+          <h4>Jobseeker Register</h4>
+        </div>
+        <div>
+          <form [formGroup]="jobSeekerForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+              <div class="col-md-12">
+                <input type="text" class="form-control" placeholder="Name"  formControlName="name" readonly>
+                </div>
+              </div>
+            <br>
+            <div class="row">
+              <div class="col-md-4">
+                <input type="text" class="form-control" placeholder="Prisoner Id" formControlName="pid" (blur)="getName()">
+                <small class="text-danger" *ngIf="f.pid.errors?.['required'] && (f.pid.touched || submitted)">{{'isRequired'}}</small>
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Email" formControlName="email" (blur)="isValid()">
+                <small class="text-danger" *ngIf="f.email.errors?.['required'] && (f.email.touched || submitted)">{{'isRequired'}}</small>
+                <small class="text-danger" *ngIf="f.email.errors?.['email'] && (f.email.touched || submitted)">{{'isInvalid'}}</small>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col">
+                <small class="custom-file-label" for="customFile">Logo</small>
+                <input type="file" class="form-control" placeholder="Logo" (change)="photoUpload($event)">
+              </div>
+              <div class="col">
+                <small class="custom-file-label" for="customFile">Proof</small>
+                <input type="file" class="form-control" placeholder="Logo" (change)="proofUpload($event)">
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col">
+                <small class="custom-file-label" for="customFile">District</small>
+                <select class="form-control" formControlName="district" (change)="getPlace()">
+                  <option  value="" selected disabled >--select--</option>
+                  <option *ngFor="let item of distarray" value="{{item.district_id}}">{{item.district_name}}</option>
+                </select>
+                <small class="text-danger" *ngIf="f.district.errors?.['required'] && (f.district.touched || submitted)">{{'isRequired'}}</small>
+              </div>
+              <div class="col">
+                <small class="custom-file-label" for="customFile">Place</small>
+                <select class="form-control" formControlName="place">
+                  <option  value="" selected disabled >--select--</option>
+                  <option *ngFor="let item of placearray" value="{{item.place_id}}">{{item.place_name}}</option>
+                </select>
+                <small class="text-danger" *ngIf="f.place.errors?.['required'] && (f.place.touched || submitted)">{{'isRequired'}}</small>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col">
+                <input type="password" class="form-control" placeholder="Password" formControlName="password">
+                <small class="text-danger" *ngIf="f.password.errors?.['required'] && (f.password.touched || submitted)">{{'isRequired'}}</small>
+                <small class="text-danger" *ngIf="f.password.errors?.['password'] && (f.password.touched || submitted)">{{'isInvalid'}}</small>
+                <small class="text-danger" *ngIf="f.password.errors?.['minlength'] && (f.password.touched || submitted)">{{'tooSmall'}}</small>
+              </div>
+              <div class="col">
+                <input type="password" class="form-control" placeholder="Confirm Password" formControlName="cpassword">
+                <small class="text-danger" *ngIf="f.cpassword.errors?.['required'] && (f.cpassword.touched || submitted)">{{'isRequired'}}</small>
+                <small class="text-danger" *ngIf="!f.cpassword.errors?.['required'] && f.cpassword.errors?.['confirm'] && (f.cpassword.touched || submitted)">{{'notMatch'}}</small>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-check">
+
+              </div>
+            </div>
+            &nbsp;<button type="submit" class="btn btn-primary" [disabled]="!this.jobSeekerForm.valid">Submit</button>&nbsp;
+            <button type="reset" class="btn btn-danger">Cancel</button>
+          </form>
+          <br>
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

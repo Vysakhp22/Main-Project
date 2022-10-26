@@ -25,6 +25,7 @@ import { CentraljailEditProfileComponent } from './Centraljail/centraljail-edit-
 import { CentraljailMyprofileComponent } from './Centraljail/centraljail-myprofile/centraljail-myprofile.component';
 import { CentraljailnavbarComponent } from './Centraljail/centraljailnavbar/centraljailnavbar.component';
 import { JailsuperintendentRegisterComponent } from './Centraljail/jailsuperintendent-register/jailsuperintendent-register.component';
+import { JobseekerRegisterComponent } from './Centraljail/jobseeker-register/jobseeker-register.component';
 import { PrisonerRegistrationComponent } from './Centraljail/prisoner-registration/prisoner-registration.component';
 import { ProductRateComponent } from './Centraljail/product-rate/product-rate.component';
 import { ProductStockComponent } from './Centraljail/product-stock/product-stock.component';
@@ -138,7 +139,8 @@ children:[{path:'prisonerregister',component:PrisonerRegistrationComponent},
           {path:'production',component:ProductionDetailsComponent},
           {path:'productstock', component:ProductStockComponent},
           {path:'viewproductiondetails', component:ViewProductionComponent},
-          {path:'viewStock', component:ViewStockDetailsComponent}]}
+          {path:'viewStock', component:ViewStockDetailsComponent},
+          {path:'jobseekerRegister',component:JobseekerRegisterComponent}]}
 ];
 
 @NgModule({
