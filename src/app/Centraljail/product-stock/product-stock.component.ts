@@ -13,6 +13,7 @@ export class ProductStockComponent implements OnInit {
   productArray: any[]=[];
   submitted=false;
   stockArray:any []=[];
+  stock:boolean = true;
 
   constructor( private centraljailService: CentraljailServiceService,
                private fb: FormBuilder,
@@ -32,14 +33,15 @@ export class ProductStockComponent implements OnInit {
   }
 
   onChange(){
-    console.log(this.stockForm.value.pid);
     this.centraljailService.getStock({id: localStorage.getItem('Id'),pid: this.stockForm.value.pid}).then((res: any) => {
+      console.log(res);
+      if(res.alert === "Failed"){
+        this.stock = false;
+      }
+      else{
         this.stockArray=res.data;
-        console.log(this.stockArray);
+      }
     });
-    if(this.stockArray != undefined){
-      console.log('hai');
-    }
   }
 
   onSubmit(){
@@ -49,21 +51,24 @@ export class ProductStockComponent implements OnInit {
       return;
     }
     else{
-      if(this.stockArray != undefined){
+      if(this.stock === true){
         this.stockForm.patchValue({
           qty:(Number(this.stockArray[0].productstock_totalquantity) + Number(this.stockForm.value.stock)).toString()
         });
       }
-      console.log(this.stockForm.value.qty);
-      console.log(this.stockForm.value);
+
       this.centraljailService.addStock({id:localStorage.getItem('Id'), ... this.stockForm.value}).then((res: any) =>{
+        console.log(res);
           if(res.alert === 'Success'){
             alert('Product stock added Succesfully');
             this.stockForm.reset();
+            this.router.navigate(['/centraljail/viewStock']);
           }
           else if(res.alert === 'Updated'){
             alert('Product stock updated Succesfully');
             this.stockForm.reset();
+            this.router.navigate(['/centraljail/viewStock']);
+
           }
       });
     }
