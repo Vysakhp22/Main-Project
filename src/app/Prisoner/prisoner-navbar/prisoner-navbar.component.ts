@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-prisoner-navbar',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrisonerNavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor( private router: Router) {
+    if(!localStorage.getItem('Id')){
+      this.router.navigate(['/guestLogin']);
+    }
+   }
 
   ngOnInit(): void {
   }

@@ -25,10 +25,8 @@ export class GuestloginComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log(this.loginForm.value);
     this.service.guestLogin(this.loginForm.value).then(( res:any ) => {
       this.logArray=res;
-      console.log(res);
       if(res.alert === 'Admin'){
         this.route.navigate(['/admin']);
         localStorage.setItem('Id',res.data[0].admin_id);
@@ -53,6 +51,11 @@ export class GuestloginComponent implements OnInit {
         this.route.navigate(['/user']);
         localStorage.setItem('Id',res.data[0].user_id);
         localStorage.setItem('User',res.data[0].user_name);
+      }
+      else if(res.alert === 'Jobseeker'){
+        this.route.navigate(['/prisoner']);
+        localStorage.setItem('Id',res.data[0].jobseeker_id);
+        localStorage.setItem('User',res.data[0].prisoner_id);
       }
       else{
         alert('Invalid Email or Password');

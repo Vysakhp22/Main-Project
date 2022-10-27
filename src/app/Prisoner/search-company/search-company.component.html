@@ -1,26 +1,48 @@
-<nav class="navbar bg-light" style="margin-top: 10%;">
-  <div class="container-fluid">
-    <!-- <a class="navbar-brand">Navbar</a> -->
-    <form class="d-flex" >
-      <label class="form-control-sm text-danger" for="customFile">District</label>
-      <select class="form-control-sm">
-        <option>Small select</option>
-      </select>
-      <label class="form-control-sm text-danger" for="customFile">Place</label>
-      <select class="form-control-sm">
-        <option>Small select</option>
-      </select>
-    </form>
-  </div>
-</nav>
-<div style="margin-top: 5%;">
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="#" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+<html>
+
+<body>
+  <div class="container" style="width:95%;margin-left:2%;margin-bottom: 5%; margin-top: 8%;">
+    <div class="row" style="width:100% ;">
+      <div class="col-md-12">
+        <form [formGroup]=" jobForm">
+          <div class="row navbar bg-light" style="margin-top: 3%;">
+            <div class="form-row">
+              <div class="col-md-4 ">
+                <small class="text-dark"> Job Category:</small>
+              </div>
+              <div class="col">
+                <select class="form-control" id="exampleFormControlSelect1" formControlName="jcatid"
+                  (change)="onChange()">
+                  <option value="" selected disabled>--select--</option>
+                  <option *ngFor="let item of jcatarray" value="{{item.jobcategory_id}}">{{item.jobcategory_name}}
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </form>
+        <br>
+        <div class="row" style="margin-left: 1px;">
+          <div class="col-md-4 p-1" *ngFor="let item of jobarray">
+            <div class="card text-center col-md-4 p-1" style="width: 18rem;">
+              <div class="card-header">
+                {{item.jobcategory_name}}
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">{{item.jobdetname}}</h5>
+                <p class="card-text">{{item.jobdet_desc}}</p>
+                <button mat-button color="primary" (click)="onClick(item.jobvac_id)">Apply now</button>
+              </div>
+              <div class="card-footer text-muted">
+                {{item.jobvac_lastdate | date:'fullDate'}}
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+      </div>
     </div>
   </div>
-</div>
+</body>
 
+</html>
