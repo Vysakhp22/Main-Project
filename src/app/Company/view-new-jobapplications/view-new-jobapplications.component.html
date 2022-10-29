@@ -1,7 +1,7 @@
-<div class="d-flex p-3 justify-content-center">
+<div class="d-flex p-3 justify-content-center"  style="margin-top: 5%;">
   <h4>Job Applications</h4>
 </div>
-<table class="table">
+<table class="table" style="margin-left: 15%; width: 800px;">
   <thead class="table-active">
     <tr>
       <th scope="col">Sl.No.</th>
@@ -12,13 +12,14 @@
       <th scope="col">Action</th>
     </tr>
   </thead>
-  <tbody *ngFor="let i=index;">
-    <tr>
-      <th scope="row">{{i}}</th>
-      <td scope="row">Mark</td>
-      <td scope="row">Otto</td>
-      <th scope="row">{{i}}</th>
-      <td scope="row">Otto</td>
+  <tbody>
+    <tr  *ngFor="let i=index; let item of applyarr" >
+      <th scope="row">{{i+1}}</th>
+      <td scope="row">{{item.jobdetname}}</td>
+      <td scope="row">{{item.prisoner_name}}</td>
+      <td scope="row">{{item.jobseeker_email}}</td>
+      <td scope="row">{{item.jobapplier_date}}</td>
+      <td><button class="btn btn-outline-success btn-sm bi bi-check2-circle" (click)="approve(item.jobapply_id)" ></button> &nbsp;<button class="btn btn-outline-danger btn-sm bi bi-x-circle" (click)="reject(item.jobapply_id)"></button></td>
     </tr>
   </tbody>
 </table>

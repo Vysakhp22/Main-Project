@@ -35,4 +35,26 @@ export class CompanyServiceService {
   viewVacancy(id: any){
     return this.http.post("http://localhost/Ex-Convict/Company/viewVacancy.php",id).toPromise();
   }
+
+  viewAllApplications(id: any){
+    return this.http.post("http://localhost/Ex-Convict/Company/viewallApplications.php",id).toPromise();
+  }
+
+  approveApplication(id: any){
+    return this.http.post("http://localhost/Ex-Convict/Company/approveapplication.php",id).toPromise();
+  }
+
+  rejectApplication(id: any){
+    return this.http.post("http://localhost/Ex-Convict/Company/rejectapplication.php",id).toPromise();
+  }
+
+  viewApprovedApplications(id: any){
+    return this.http.post("http://localhost/Ex-Convict/Company/viewacceptedapplications.php",id).toPromise();
+  }
+
+  viewRejectedApplications(id: any){
+    return this.http.post("http://localhost/Ex-Convict/Company/rejectedapplications.php",id).toPromise();
+  }
+
+
 }

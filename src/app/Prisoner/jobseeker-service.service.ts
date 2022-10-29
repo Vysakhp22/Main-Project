@@ -23,4 +23,5 @@ export class JobseekerServiceService {
   sendApplication(data: any){
     return this.http.post("http://localhost/Ex-Convict/Jobseeker/Applyjob.php",data).toPromise();
   }
+
 }

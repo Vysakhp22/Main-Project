@@ -1,24 +1,23 @@
-<div class="d-flex p-3 justify-content-center">
+<div class="d-flex p-3 justify-content-center" style="margin-top: 5%;">
   <h4>Accepted Applications</h4>
 </div>
-<table class="table">
-  <thead class="table-active">
+<table class="table"  style="margin-left: 15%; width: 800px;">
+  <thead class="table-active" >
     <tr>
       <th scope="col">Sl.No.</th>
       <th scope="col">Job Vaccancy</th>
       <th scope="col">Applicant</th>
       <th scope="col">Contact</th>
       <th scope="col">Appied Date</th>
-      <th scope="col">Action</th>
     </tr>
   </thead>
-  <tbody *ngFor="let i=index;">
-    <tr>
-      <th scope="row">{{i}}</th>
-      <td scope="row">Mark</td>
-      <td scope="row">Otto</td>
-      <th scope="row">{{i}}</th>
-      <td scope="row">Otto</td>
+  <tbody>
+    <tr  *ngFor="let i=index; let item of applyarr" >
+      <th scope="row">{{i+1}}</th>
+      <td scope="row">{{item.jobdetname}}</td>
+      <td scope="row">{{item.prisoner_name}}</td>
+      <td scope="row">{{item.jobseeker_email}}</td>
+      <td scope="row">{{item.jobapplier_date}}</td>
     </tr>
   </tbody>
 </table>
