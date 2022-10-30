@@ -15,13 +15,11 @@ export class ViewNewJobapplicationsComponent implements OnInit {
   ngOnInit(): void {
     this.Cservice.viewAllApplications({id: localStorage.getItem('Id')}).then((data: any) =>{
       this.applyarr=data.data;
-      console.log(data)
     });
   }
 
-  approve(jid: any){
-    console.log(jid);
-    this.Cservice.approveApplication({id: jid}).then((res: any) => {
+  approve(jid: any, vid: any){
+    this.Cservice.approveApplication({id: jid, vacid: vid}).then((res: any) => {
       console.log(res);
       if(res.alert==='Success'){
         alert("Approved");
@@ -31,7 +29,6 @@ export class ViewNewJobapplicationsComponent implements OnInit {
   }
 
   reject(jid: any){
-    console.log(jid);
     this.Cservice.rejectApplication({id: jid}).then((res: any) => {
       console.log(res);
       if(res.alert==='Success'){

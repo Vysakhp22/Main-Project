@@ -75,6 +75,7 @@ import { ViewStockDetailsComponent } from './Centraljail/view-stock-details/view
 import { OrderproductComponent } from './Shop/orderproduct/orderproduct.component';
 import { JobCategoryComponent } from './Admin/job-category/job-category.component';
 import { JobseekerRegisterComponent } from './Centraljail/jobseeker-register/jobseeker-register.component';
+import { ApplicationStatusComponent } from './Prisoner/application-status/application-status.component';
 
 
 @NgModule({
@@ -146,7 +147,8 @@ import { JobseekerRegisterComponent } from './Centraljail/jobseeker-register/job
     ViewStockDetailsComponent,
     OrderproductComponent,
     JobCategoryComponent,
-    JobseekerRegisterComponent
+    JobseekerRegisterComponent,
+    ApplicationStatusComponent
   ],
   imports: [
     BrowserModule,

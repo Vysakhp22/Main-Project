@@ -24,4 +24,8 @@ export class JobseekerServiceService {
     return this.http.post("http://localhost/Ex-Convict/Jobseeker/Applyjob.php",data).toPromise();
   }
 
+  ApplicationStatus(id: any){
+    return this.http.post("http://localhost/Ex-Convict/Jobseeker/appliedstatus.php", id).toPromise();
+  }
+
 }

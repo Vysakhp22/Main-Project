@@ -55,6 +55,7 @@ import { GuestloginComponent } from './Guest/guestlogin/guestlogin.component';
 import { GuestnavComponent } from './Guest/guestnav/guestnav.component';
 import { NewUserComponent } from './Guest/new-user/new-user.component';
 import { ShopRegistrationComponent } from './Guest/shop-registration/shop-registration.component';
+import { ApplicationStatusComponent } from './Prisoner/application-status/application-status.component';
 import { PrisonerNavbarComponent } from './Prisoner/prisoner-navbar/prisoner-navbar.component';
 import { SearchCompanyComponent } from './Prisoner/search-company/search-company.component';
 import { OrderproductComponent } from './Shop/orderproduct/orderproduct.component';
@@ -100,7 +101,8 @@ children:[{path:'district',component:DistrictComponent},
           {path:'jailregister',component:CentraljailRegistrationComponent},
           {path:'jobcategory', component:JobCategoryComponent}]},
 {path:'prisoner',component:PrisonerNavbarComponent,
-children:[{path:'searchcompany',component:SearchCompanyComponent}]},
+children:[{path:'searchcompany',component:SearchCompanyComponent},
+          {path:'appliedstatus', component:ApplicationStatusComponent}]},
 {path:'company',component:CompanyNavbarComponent,
 children:[{path:'companymyprofile',component:CompanyMyProfileComponent},
           {path:'companychangepassword/:id',component:CompanyChangePasswordComponent},

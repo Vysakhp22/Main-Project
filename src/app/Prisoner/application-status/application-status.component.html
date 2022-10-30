@@ -1,0 +1,26 @@
+<p>application-status works!</p>
+<div class="d-flex p-3 justify-content-center"  style="margin-top: 8%;">
+    <h4>Application Status</h4>
+  </div>
+  <table class="table" style="margin-left: 15%; width: 800px;">
+    <thead class="table-active">
+      <tr>
+        <th scope="col">Sl.No.</th>
+        <th scope="col">Company</th>
+        <th scope="col">Job </th>
+        <th scope="col">status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let i=index; let item of jarray" >
+        <td scope="row">{{i+1}}</td>
+        <td scope="row">{{item.company_name}}</td>
+        <td scope="row">{{item.jobdetname}}</td>
+        <!-- <td scope="row">{{item.jobapplier_status}}</td> -->
+        <th *ngIf="item.jobapplier_status == 0" class="p-2 mb-2 bg-info text-white">Pending</th>
+        <th *ngIf="item.jobapplier_status == 1" class="p-2 mb-2 bg-success text-white">Approved</th>
+        <th *ngIf="item.jobapplier_status == 2"  class="p-2 mb-2 bg-danger text-white">Rejected</th>
+      </tr>
+    </tbody>
+  </table>
+  

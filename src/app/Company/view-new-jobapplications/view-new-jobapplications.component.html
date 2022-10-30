@@ -19,7 +19,7 @@
       <td scope="row">{{item.prisoner_name}}</td>
       <td scope="row">{{item.jobseeker_email}}</td>
       <td scope="row">{{item.jobapplier_date}}</td>
-      <td><button class="btn btn-outline-success btn-sm bi bi-check2-circle" (click)="approve(item.jobapply_id)" ></button> &nbsp;<button class="btn btn-outline-danger btn-sm bi bi-x-circle" (click)="reject(item.jobapply_id)"></button></td>
+      <td><button class="btn btn-outline-success btn-sm bi bi-check2-circle" (click)="approve(item.jobapply_id,item.jobvac_id)" ></button> &nbsp;<button class="btn btn-outline-danger btn-sm bi bi-x-circle" (click)="reject(item.jobapply_id)"></button></td>
     </tr>
   </tbody>
 </table>
