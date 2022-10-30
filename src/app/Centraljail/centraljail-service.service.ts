@@ -99,4 +99,12 @@ export class CentraljailServiceService {
   jobSeekerValid(id: any){
     return this.http.post("http://localhost/Ex-Convict/Centraljail/jobSeekervalid.php", id).toPromise();
   }
+
+  viewPrisoner(id: any){
+    return this.http.post("http://localhost/Ex-Convict/Centraljail/viewPrisoner.php",id).toPromise();
+  }
+
+  searchPrisoner(id: any){
+    return this.http.post("http://localhost/Ex-Convict/Centraljail/prisonerSearch.php",id).toPromise();
+  }
 }

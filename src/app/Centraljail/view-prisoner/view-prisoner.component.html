@@ -1,7 +1,19 @@
 <div class="d-flex p-3 justify-content-center" style="margin-top: 5%;">
   <h4>Prisoners details</h4>
 </div>
-<table class="table" style="margin-left: 15%; width: 800px;">
+<div style="margin-top: -4%;">
+  <form [formGroup]="pForm">
+    <div class="row navbar bg-light" style="margin-top: 3%;">
+      <div class="form-row" >
+        <div class="col-md-3"style="margin-left: 70%;">
+          <input  type="text" class="form-control" placeholder="Prisoner Code" formControlName="pcode" (blur)="onBlur()">
+          <small class="text-danger" *ngIf="this.flag === false">No Results</small>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<table class="table" style="margin-left: 15%; width: 800px; margin-top: 2%;">
   <thead class="table-active">
     <tr>
       <th scope="col">Sl.No.</th>
@@ -9,17 +21,15 @@
       <th scope="col">Contact</th>
       <th scope="col">Email</th>
       <th scope="col">Photo</th>
-      <th scope="col">Action</th>
     </tr>
   </thead>
-  <tbody *ngFor="let i=index;">
-    <tr>
-      <th scope="row">{{i}}</th>
-      <td scope="row">Mark</td>
-      <td scope="row">Otto</td>
-      <th scope="row">{{i}}</th>
-      <td scope="row">Mark</td>
-      <td scope="row">Otto</td>
+  <tbody >
+    <tr *ngFor="let i=index; let item of prisonerarray">
+      <td scope="row">{{i+1}}</td>
+      <td scope="row">{{item.prisoner_name}}</td>
+      <td scope="row">{{item.prisoner_contactno}}</td>
+      <td scope="row">{{item.prisoner_emailid}}</td>
+      <td scope="row"><img [src]="'http://localhost/Ex-Convict/Centraljail/'+item.prisoner_photo" class="card-img-top" alt="..." width="50" height="50" alt="" ></td>
     </tr>
   </tbody>
 </table>
