@@ -28,10 +28,10 @@
             <img src="../../../assets/images/download.png" width="32" height="32" class="rounded-circle" style=" border: 1px; border-color: aliceblue;">
           </a>
           <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-            <li><a class="dropdown-item" routerLink="admin-profile">Profile</a></li>
+            <li><a class="dropdown-item" routerLink="/shop/shopmyprofile">Profile</a></li>
            <!---- <li><a class="dropdown-item" routerLink="admin-registration">Add New Admin</a></li>-->
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/">Sign out</a></li>
+            <li><a class="dropdown-item" routerLink="/guestLogin">Sign out</a></li>
           </ul>
         </div>
     </div>
@@ -49,13 +49,10 @@
 
                       <li class="sidebarListItem">
 
-                           <a  routerLink="admin-home"><i class='bx bx-home-alt-2'></i>&nbsp;Home</a>
+                           <a  routerLink="/shop"><i class='bx bx-home-alt-2'></i>&nbsp;Home</a>
                       </li>
 
-                      <li class="sidebarListItem">
-
-                        <a [routerLink]="['/shop/shopmyprofile']"><i class='bi bi-person-square'></i>&nbsp;My Profile</a>
-                      </li>
+                    
 
 
                       <li class="sidebarListItem">
