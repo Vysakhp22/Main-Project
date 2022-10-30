@@ -3,115 +3,79 @@
 </head>
 
 <!-- Navbar content -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-light" width="50" >
+<nav class="navbar navbar-expand-lg navbar-dark bg-light" width="50">
   <div class="container-fluid" style="margin-top:50px">
-    <a class="navbar-brand" style="width: 55px; height: 73px;"><img src="../../../assets/images/logo.png" style="margin-top: 8px; margin-left: 1em; height: 40px;width: 40px; border-radius:50%;"></a>
+    <a class="navbar-brand" style="width: 55px; height: 73px;"><img src="../../../assets/images/logo.png"
+        style="margin-top: 8px; margin-left: 1em; height: 40px;width: 40px; border-radius:50%;"></a>
     <header style="margin-left: 1em; color: antiquewhite;">
       <h3>Ex-Convict Lifeline</h3>
-  </header>
-   <!--- <div> <br><h6><i>A commitment to community</i></h6></div>---->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+    </header>
+    <!--- <div> <br><h6><i>A commitment to community</i></h6></div>---->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+      aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarScroll">
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 200px;">
       </ul>
-    <!----<form class="d-flex">
+      <!----<form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
           <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
         </svg></button>
       </form>
         <button type="button" class="btn btn-primary" onclick="cancel()">Logout</button>---->
-        <div class="dropdown text-end" style="padding-left: 130px;">
-          <a href="" class="d-block link-dark  dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" style="color: black;font-size: 5px;">
-            <img src="../../../assets/images/download.png" width="32" height="32" class="rounded-circle" style=" border: 1px; border-color: aliceblue;">
-          </a>
-          <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-            <li><a class="dropdown-item" routerLink="admin-profile">Profile</a></li>
-           <!---- <li><a class="dropdown-item" routerLink="admin-registration">Add New Admin</a></li>-->
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/">Sign out</a></li>
-          </ul>
-        </div>
+      <div class="dropdown text-end" style="padding-left: 130px;">
+        <a href="" class="d-block link-dark  dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown"
+          style="color: black;font-size: 5px;">
+          <img src="../../../assets/images/download.png" width="32" height="32" class="rounded-circle"
+            style=" border: 1px; border-color: aliceblue;">
+        </a>
+        <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+          <li><a class="dropdown-item" routerLink="/company/companymyprofile">Profile</a></li>
+          <!---- <li><a class="dropdown-item" routerLink="admin-registration">Add New Admin</a></li>-->
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li><a class="dropdown-item" routerLink="/guestLogin">Sign out</a></li>
+        </ul>
+      </div>
     </div>
   </div>
 
 </nav>
 
-    <div class="sidebar">
-      <div class="sidebarWrapper">
-          <div class="sidebarMenu">
-              <h1 class="sidebarTitle">Dash Board</h1>
-              <ul class="sidebarList">
+<div class="sidebar">
+  <div class="sidebarWrapper">
+    <div class="sidebarMenu">
+      <h1 class="sidebarTitle">Dash Board</h1>
+      <ul class="sidebarList">
+        <li class="sidebarListItem">
 
+          <a routerLink="/company"><i class='bx bx-home-alt-2'></i>&nbsp;Home</a>
+        </li>
+        <li class="sidebarListItem">
 
-
-                      <li class="sidebarListItem">
-
-                           <a  routerLink="admin-home"><i class='bx bx-home-alt-2'></i>&nbsp;Home</a>
-                      </li>
-
-                      <li class="sidebarListItem">
-
-                        <a [routerLink]="['/company/companymyprofile']"><i class='bi bi-person-square'></i>&nbsp;My Profile</a>
-                      </li>
-
-
-                      <li class="sidebarListItem">
-
-                          <a [routerLink]="['/shop/shopsearchproduct']"><i class='bi bi-search'></i>&nbsp;Serach Product</a>
-                      </li>
-
-
-                      <!-- <li class="sidebarListItem">
-
-                         <a routerLink="branch"><i class="bi bi-shop"></i>&nbsp;Branch </a>
-                      </li>
-
-                   <li class="sidebarListItem">
-
-                    <a routerLink="category"><i class="bi bi-file-earmark-medical-fill"></i>&nbsp;Category </a>
-                 </li>
-                 <li class="sidebarListItem">
-
-                  <a routerLink="subcategory"><i class="bi bi-file-earmark-medical-fill"></i>&nbsp;Subcategory </a>
-               </li>
-               <li class="sidebarListItem">
-
-                <a routerLink="medicine"><i class="bi bi-heart-pulse"></i>&nbsp;Medicine</a>
-             </li> -->
-
-                <!-- <hr> -->
-                   <!-- <li class="sidebarListItem">
-
-                          <a routerLink="customer-report"><i class='bx bxs-report'></i>&nbsp;Reports </a>
-                      </li>
-
-
-                      <li class="sidebarListItem">
-
-                          <a routerLink="complaint"><i class='bx bxs-spreadsheet'></i>&nbsp;Complaints </a>
-                      </li>
-
-
-                      <li class="sidebarListItem">
-
-                          <a routerLink="feedbackview"><i class='bx bx-note'></i>&nbsp;Feedbacks </a>
-                      </li> -->
-                    <!-- <hr> -->
-
-
-
-              </ul>
-          </div>
+          <a routerLink="/company/jobvacancy"><i class="bi bi-plus-circle"></i>&nbsp;Add Vacancy</a>
+        </li>
+      </ul>
+      <div class="dropdown" style="margin-left: 10px;">
+        <a href="" class="d-block link-dark  dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown"
+          style="color: white;">
+          <i></i>
+          <h6 class="bi bi-card-checklist">&nbsp;Application Report</h6>
+        </a>
+        <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="margin-left: 1em;">
+          <li><a class="dropdown-item" routerLink="/company/viewjobapplicants">View Application</a></li>
+          <li><a class="dropdown-item" routerLink="/company/viewacceptedjobapplications">Approved Application</a></li>
+          <li><a class="dropdown-item" routerLink="/company/viewrejectedapplications">Rejected Application</a></li>
+        </ul>
       </div>
     </div>
-    <div style="margin-left: 14em; margin-top: 2%;">
-      <main>
-        <router-outlet></router-outlet>
-      </main>
-    </div>
-
-
-
+  </div>
+</div>
+<div style="margin-left: 14em; margin-top: 2%;">
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+</div>

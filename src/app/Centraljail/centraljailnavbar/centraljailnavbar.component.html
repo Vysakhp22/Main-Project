@@ -28,82 +28,82 @@
             <img src="../../../assets/images/download.png" width="32" height="32" class="rounded-circle" style=" border: 1px; border-color: aliceblue;">
           </a>
           <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-            <li><a class="dropdown-item" routerLink="admin-profile">Profile</a></li>
+            <li><a class="dropdown-item" routerLink="/centraljail/centraljailmyprofile">Profile</a></li>
            <!---- <li><a class="dropdown-item" routerLink="admin-registration">Add New Admin</a></li>-->
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/">Sign out</a></li>
+            <li><a class="dropdown-item" routerLink="/guestLogin">Sign out</a></li>
           </ul>
         </div>
     </div>
   </div>
 
 </nav>
-
     <div class="sidebar">
       <div class="sidebarWrapper">
           <div class="sidebarMenu">
               <h1 class="sidebarTitle">Dash Board</h1>
               <ul class="sidebarList">
-
-
-
                       <li class="sidebarListItem">
-
-                           <a  routerLink="admin-home"><i class='bx bx-home-alt-2'></i>&nbsp;Home</a>
+                           <a  routerLink="/centraljail"><i class='bx bx-home-alt-2'></i>&nbsp;Home</a>
                       </li>
-
                       <li class="sidebarListItem">
-
-                        <a  routerLink="/centraljail/jailsuperintendent"><i class='bx bx-current-location'></i>&nbsp;Jail superintendent</a>
+                        <a  routerLink="/centraljail/jailsuperintendent"><i class='bi bi-person'></i>&nbsp;Jail superintendent</a>
                       </li>
-
-
                       <li class="sidebarListItem">
-
-                          <a routerLink="/centraljail/prisonerregister"><i class='bx bxs-location-plus'></i>&nbsp;Prisoner</a>
+                          <a routerLink="/centraljail/prisonerregister"><i class='bi bi-people'></i>&nbsp;Prisoner</a>
                       </li>
-
-
                       <li class="sidebarListItem">
-
-                         <a routerLink="/centraljail/centraljailmyprofile"><i class="bi bi-shop"></i>&nbsp;My Profile</a>
-                      </li>
-
-                   <!-- <li class="sidebarListItem">
-
-                    <a routerLink="category"><i class="bi bi-file-earmark-medical-fill"></i>&nbsp;Category </a>
-                 </li>
-                 <li class="sidebarListItem">
-
-                  <a routerLink="subcategory"><i class="bi bi-file-earmark-medical-fill"></i>&nbsp;Subcategory </a>
-               </li>
-               <li class="sidebarListItem">
-
-                <a routerLink="medicine"><i class="bi bi-heart-pulse"></i>&nbsp;Medicine</a>
-             </li> -->
-
-                <!-- <hr> -->
-                   <!-- <li class="sidebarListItem">
-
-                          <a routerLink="customer-report"><i class='bx bxs-report'></i>&nbsp;Reports </a>
-                      </li>
-
-
-                      <li class="sidebarListItem">
-
-                          <a routerLink="complaint"><i class='bx bxs-spreadsheet'></i>&nbsp;Complaints </a>
-                      </li>
-
-
-                      <li class="sidebarListItem">
-
-                          <a routerLink="feedbackview"><i class='bx bx-note'></i>&nbsp;Feedbacks </a>
-                      </li> -->
-                    <!-- <hr> -->
-
-
-
+                        <a routerLink="/centraljail/viewprisoner"><i class='bi bi-people-fill'></i>&nbsp;View Prisoner</a>
+                    </li>
               </ul>
+              <div class="dropdown" style="margin-left: 10px;">
+                <a href="" class="d-block link-dark  dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown"
+                  style="color: white;">
+                  <i></i>
+                  <h6 class="bi bi-folder-plus">&nbsp;Add Product Details</h6>
+                </a>
+                <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="margin-left: 1em;">
+                  <li><a class="dropdown-item" routerLink="/centraljail/production">Production Details</a></li>
+                  <li><a class="dropdown-item" routerLink="/centraljail/productrate">Product Rate</a></li>
+                  <li><a class="dropdown-item" routerLink="/centraljail/productstock">Product Stock</a></li>
+                </ul>
+              </div>
+              <div class="dropdown" style="margin-left: 10px;">
+                <a href="" class="d-block link-dark  dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown"
+                  style="color: white;">
+                  <i></i>
+                  <h6 class="bi bi-card-checklist">&nbsp;View Product Details</h6>
+                </a>
+                <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="margin-left: 1em;">
+                  <li><a class="dropdown-item" routerLink="/centraljail/viewproductiondetails">View Production Details</a></li>
+                  <li><a class="dropdown-item" routerLink="/centraljail/viewStock">View Product Stock</a></li>
+                  <li><a class="dropdown-item" routerLink="/centraljail/viewproductrates">View Product Rate</a></li>
+                </ul>
+              </div>
+              <div class="dropdown" style="margin-left: 10px;">
+                <a href="" class="d-block link-dark  dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown"
+                  style="color: white;">
+                  <i></i>
+                  <h6 class="bi bi-shop-window">&nbsp;Shop Details</h6>
+                </a>
+                <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="margin-left: 1em;">
+                  <li><a class="dropdown-item" routerLink="/centraljail/viewshoporders">View Shop Orders</a></li>
+                  <li><a class="dropdown-item" routerLink="/centraljail/viewacceptedshoporders">View Accepted Orders</a></li>
+                  <li><a class="dropdown-item" routerLink="/centraljail/viewrejectedshoporders">View Rejected Orders</a></li>
+                </ul>
+              </div>
+              <div class="dropdown" style="margin-left: 10px;">
+                <a href="" class="d-block link-dark  dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown"
+                  style="color: white;">
+                  <i></i>
+                  <h6 class="bi bi-card-checklist">&nbsp;User Details</h6>
+                </a>
+                <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="margin-left: 1em;">
+                  <li><a class="dropdown-item" routerLink="/centraljail/viewuserorders">View User Orders</a></li>
+                  <li><a class="dropdown-item" routerLink="/centraljail/viewaccepteduserorders">View Accepted Orders</a></li>
+                  <li><a class="dropdown-item" routerLink="/centraljail/viewrejecteduserorders">View Rejected Orders</a></li>
+                </ul>
+              </div>
           </div>
       </div>
     </div>
